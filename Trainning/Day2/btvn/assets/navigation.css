@@ -1,0 +1,28 @@
+#navigation {
+    margin-top: 20px;
+}
+#navigation .name {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    padding: 10px 16px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+.brand span {
+    font-size: 20px;
+    margin-left: 10px;
+    letter-spacing: 6px;
+}
+#navigation .brand {
+    display: inline-block;
+}
+
+.contact-icons {
+    display: inline-block;
+    margin-left: 453px;
+}
+.contact-icons i {
+    font-size: 20px;
+    margin-left: 10px;
+}

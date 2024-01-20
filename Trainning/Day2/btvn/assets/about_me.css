@@ -1,0 +1,22 @@
+#about_me {
+    margin-top: 40px;
+}
+#about_me h3 {
+    display: inline-block;
+    padding-bottom: 4px;
+    margin-top: 28px;
+    border-bottom: 1px solid red;
+}
+#about_me p {
+    margin-top: 28px;
+}
+#about_me button {
+    display: inline-block;
+    margin: 50px auto;
+    border: 1px solid red;
+    padding: 12px;
+    border-radius: 30px;
+    background-color: white;
+    color: red;
+    cursor: pointer;
+}
