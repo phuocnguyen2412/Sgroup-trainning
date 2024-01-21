@@ -1,5 +1,5 @@
 #work_experience {
-    margin: 40px 0;
+    margin: 50px 0;
 }
 #work_experience h3 {
     display: inline-block;
@@ -10,6 +10,7 @@
 .work {
     display: inline-block;
     width: 49%;
+    padding-right: 10px;
 }
 .time {
     font-size: 18px;
