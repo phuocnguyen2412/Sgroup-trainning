@@ -1,24 +1,14 @@
-#about_me {
-    margin-top: 40px;
-}
-#about_me h3 {
-    display: inline-block;
-    padding-bottom: 4px;
-    margin-top: 28px;
-    border-bottom: 1px solid red;
-}
 #about_me p {
-    margin-top: 20px;
+    font-weight: 300;
+    font-size: 24px;
 }
 #about_me button {
     display: block;
-    margin: 0 auto;
-    margin-top: 30px;
-    margin-bottom: 60px;
-    border: 1px solid brown;
-    padding: 12px;
-    border-radius: 30px;
-    background-color: white;
     color: brown;
-    cursor: pointer;
+    background-color: #fff;
+    margin:40px auto  0  auto;
+}
+#about_me button:hover {
+    color: #fff;
+    background-color: brown;
 }

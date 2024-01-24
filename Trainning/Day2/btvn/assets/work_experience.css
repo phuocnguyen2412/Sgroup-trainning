@@ -1,14 +1,4 @@
-#work_experience {
-    margin: 50px 0;
-    
-}
-#work_experience h3 {
-    display: inline-block;
-    padding-bottom: 4px;
-    margin-bottom: 28px;
-    border-bottom: 1px solid red;
-}
-.work_experience_container{
+.work_experience_container {
     display: flex;
 }
 .work {
@@ -17,18 +7,37 @@
 }
 .time {
     font-size: 18px;
-    margin-bottom: 12px;
-    font-weight: bold;
+    margin-bottom: 20px;
+    font-weight: 500;
 }
 .organization {
     font-size: 24px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 .role {
     font-weight: bolder;
     font-size: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    font-weight: 500;
 }
 .work ul li {
-    margin: 12px 0;
+    margin: 32px 0;
+    position: relative;
+    margin-left: 24px;
+    font-weight: 300;
+}
+.work ul li::before {
+    top: 6px;
+    left: -23px;
+    position: absolute;
+    content: "";
+    display: inline-block;
+    padding: 4px;
+    background-color: #000;
+    border-radius: 100%;
+}
+.work ul {
+    list-style-type: none;
+    font-weight: 300;
 }
