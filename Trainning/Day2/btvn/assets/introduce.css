@@ -1,17 +1,15 @@
 #introduce {
-    margin-top: 40px;
+    margin-top: 100px;
+    display: flex;
 }
 .my_img {
-    display: inline-block;
-    width: 40%;
+    flex: 4;
 }
 .my_img img {
     width: 100%;
 }
 .information {
-    display: inline-block;
-    width: 59%;
-    height: 100%;
+    flex: 6;
 }
 .information .content {
     margin-top: 10px;

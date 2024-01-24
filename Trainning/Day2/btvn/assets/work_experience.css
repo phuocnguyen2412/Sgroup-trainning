@@ -1,5 +1,6 @@
 #work_experience {
     margin: 50px 0;
+    
 }
 #work_experience h3 {
     display: inline-block;
@@ -7,10 +8,12 @@
     margin-bottom: 28px;
     border-bottom: 1px solid red;
 }
+.work_experience_container{
+    display: flex;
+}
 .work {
-    display: inline-block;
-    width: 49%;
-    padding-right: 10px;
+    flex: 1;
+    padding-right: 50px;
 }
 .time {
     font-size: 18px;

@@ -1,6 +1,8 @@
+#skills {
+    display: flex;
+}
 .skill_box {
-    display: inline-block;
-    width: 49%;
+    flex: 1;
 }
 #skills h3 {
     display: inline-block;

@@ -4,7 +4,24 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
 }
+body {
+}
 .container {
     margin: 0 auto;
-    width: 800px;
+    width: 1200px;
+}
+button {
+    background-color: #000;
+    border-radius: 60px;
+    color: #f26464;
+    border: 2px solid #f26464;
+    padding: 17px 30px;
+    letter-spacing: 3px;
+    font-size: 12px;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #f26464;
+    color: #fff;
 }

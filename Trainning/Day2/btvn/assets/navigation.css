@@ -1,5 +1,14 @@
 #navigation {
-    margin-top: 20px;
+    
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+}
+#navigation .container {
+    display: flex;
+    justify-content: space-between;
 }
 #navigation .name {
     display: inline-block;
@@ -14,14 +23,7 @@
     margin-left: 10px;
     letter-spacing: 6px;
 }
-#navigation .brand {
-    display: inline-block;
-}
 
-.contact-icons {
-    display: inline-block;
-    margin-left: 453px;
-}
 .contact-icons i {
     font-size: 20px;
     margin-left: 10px;
