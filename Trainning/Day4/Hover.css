@@ -1,0 +1,42 @@
+.box {
+    position: relative;
+    display: inline-block;
+}
+
+body {
+    background-color: black;
+}
+
+h2 {
+    position: absolute;
+    bottom: 40px;
+    left: 20px;
+    color: white;
+    transition: transform 0.5s;
+}
+
+.box:hover img {
+    opacity: 0.5;
+}
+
+span {
+    display: none;
+}
+
+.box:hover span {
+    display: inline;
+}
+
+.box:hover h2 {
+    transform: translate(0, 20px);
+}
+.line {
+    width: 480px;
+    height: 6px;
+    display: block;
+    transition: all 0.5s;
+}
+.box:hover .line {
+    background-color: white;
+    transform: translate(0, -10px);
+}
