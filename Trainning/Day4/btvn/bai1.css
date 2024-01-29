@@ -75,3 +75,9 @@
 .image:hover .content{
     opacity: 1;
 }
+img{
+    transition: scale 0.75s ease;
+}
+.image:hover img{
+    scale: 1.2;
+}
