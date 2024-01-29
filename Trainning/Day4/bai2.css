@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.loading {
+    display: flex;
+    justify-content: center;
+}
+.icon {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    margin: 20px;
+    background: #8385aa;
+    animation: loading 1s infinite alternate;
+}
+@keyframes loading {
+    to {
+        opacity: 0.1;
+        transform: translate(0, 32px);
+    }
+}
+.icon2 {
+    animation-delay: 0.25s;
+}
+.icon3 {
+    animation-delay: 0.5s;
+}
+.icon4 {
+    animation-delay: 0.75s;
+}
