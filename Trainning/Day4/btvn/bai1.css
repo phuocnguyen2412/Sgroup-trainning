@@ -19,7 +19,7 @@
     position: absolute;
     top: 40px;
     left: 40px;
-    color: white;
+    color: #ccc;
     font-weight: 400;
 }
 .bai1 strong {
@@ -29,7 +29,7 @@
     text-align: end;
     display: inline-block;
     text-transform: uppercase;
-    color: #ccc;
+    color: white;
 }
 .content {
     display: inline-block;
