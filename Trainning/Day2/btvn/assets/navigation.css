@@ -1,5 +1,4 @@
 #navigation {
-    
     padding: 20px 0;
     position: fixed;
     top: 0;
@@ -23,11 +22,15 @@
     margin-left: 10px;
     letter-spacing: 6px;
 }
-.contact-icons{
+.contact-icons {
     display: flex;
     align-items: center;
 }
+.contact-icons i:hover {
+    color: brown;
+}
 .contact-icons i {
+    cursor: pointer;
     font-size: 28px;
     margin-left: 16px;
 }
