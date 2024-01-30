@@ -17,6 +17,9 @@
     font-size: 20px;
     font-weight: bolder;
 }
+.brand .name {
+    border-radius: 10%;
+}
 .brand span {
     font-size: 20px;
     margin-left: 10px;
