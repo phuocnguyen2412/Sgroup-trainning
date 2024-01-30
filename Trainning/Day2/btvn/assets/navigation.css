@@ -29,11 +29,12 @@
     display: flex;
     align-items: center;
 }
-.contact-icons i:hover {
-    color: brown;
-}
+
 .contact-icons i {
     cursor: pointer;
     font-size: 28px;
     margin-left: 16px;
+}
+.contact-icons > i:hover {
+    color: brown;
 }
