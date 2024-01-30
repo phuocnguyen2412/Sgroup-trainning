@@ -1,0 +1,83 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.bai1 {
+    font-family: "Raleway", sans-serif;
+    margin: 100px 0;
+    display: flex;
+    justify-content: center;
+}
+.bai1 .image {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+.bai1 h3 {
+    font-size: 28px;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    color: #ccc;
+    font-weight: 400;
+}
+.bai1 strong {
+    font-weight: 800;
+}
+.bai1 p {
+    text-align: end;
+    display: inline-block;
+    text-transform: uppercase;
+    color: white;
+}
+.content {
+    display: inline-block;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    transition: opacity 0.4s ease-in-out;
+    opacity: 0;
+}
+.line {
+    display: inline-block;
+    background-color: white;
+    width: 7px;
+    height: 72px;
+    margin-left: 12px;
+}
+.flow-in {
+    position: absolute;
+    top: -749px;
+    right: -500px;
+    z-index: 1;
+    transform: rotate(31deg);
+    width: 150%;
+    height: 200%;
+    transition: top 0.75s ease , right 0.75s ease;
+}
+.blue {
+    width: 112%;
+    height: 80%;
+    background-color: #3498db;
+    opacity: 0.1;
+}
+.white {
+    width: 112%;
+    height: 20%;
+    background-color: white;
+    opacity: 0.1;
+}
+.image:hover .flow-in{
+    top: -160px;
+    right: 0;
+}
+.image:hover .content{
+    opacity: 1;
+}
+img{
+    transition: scale 0.75s ease;
+}
+.image:hover img{
+    scale: 1.2;
+}
