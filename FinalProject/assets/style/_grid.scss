@@ -1,0 +1,17 @@
+@mixin row {
+    display: flex;
+    flex-wrap: wrap;
+}
+@mixin pc-column($width) {
+    flex: 0 0 $width * 8.3333333%;
+    max-width: $width * 8.3333333%;
+}
+@mixin tablet-column($width) {
+    flex: 0 0 $width * 8.33333333%;
+    max-width: $width * 8.33333333%;
+}
+@mixin mobile-column($width) {
+    flex: 0 0 $width * 8.333333333%;
+    max-width: $width * 8.333333333%;
+}
+

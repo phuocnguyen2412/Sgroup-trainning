@@ -1,0 +1,32 @@
+@import "grid.scss";
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    right: 0;
+    z-index: 1000;
+    font-family: "Outfit", sans-serif;
+    @include row;
+    .brand {
+        position: relative;
+        h3 {
+            position: absolute;
+            top: 12px;
+            left: 21px;
+            font-weight: 400;
+            color: white;
+            strong {
+                font-weight: 700;
+            }
+        }
+    }
+    .menu-nav {
+        @include row;
+    }
+    .menu-action {
+        @include row;
+    }
+}
+.introduce {
+    background-image: url("../img/banner_bg02.jpg") cover center;
+}
