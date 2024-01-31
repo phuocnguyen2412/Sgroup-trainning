@@ -6,7 +6,7 @@
 }
 
 .skill {
-    
+    cursor: pointer;
     font-weight: 500;
     display: inline-block;
     margin-right: 15px;
@@ -14,4 +14,7 @@
     padding: 10px 20px;
     border: 1px solid #d7d7d7;
     border-radius: 20px;
+}
+.skill:hover {
+    color: brown;
 }

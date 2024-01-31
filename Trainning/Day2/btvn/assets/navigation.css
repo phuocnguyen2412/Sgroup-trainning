@@ -1,5 +1,4 @@
 #navigation {
-    
     padding: 20px 0;
     position: fixed;
     top: 0;
@@ -18,16 +17,24 @@
     font-size: 20px;
     font-weight: bolder;
 }
+.brand .name {
+    border-radius: 10%;
+}
 .brand span {
     font-size: 20px;
     margin-left: 10px;
     letter-spacing: 6px;
 }
-.contact-icons{
+.contact-icons {
     display: flex;
     align-items: center;
 }
+
 .contact-icons i {
+    cursor: pointer;
     font-size: 28px;
     margin-left: 16px;
+}
+.contact-icons > i:hover {
+    color: brown;
 }
