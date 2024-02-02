@@ -6,23 +6,32 @@ nav {
   z-index: 1000;
   font-family: "Outfit", sans-serif;
   display: flex;
-  flex-wrap: wrap; }
-  nav .brand {
-    position: relative; }
-    nav .brand h3 {
-      position: absolute;
-      top: 12px;
-      left: 21px;
-      font-weight: 400;
-      color: white; }
-      nav .brand h3 strong {
-        font-weight: 700; }
-  nav .menu-nav {
-    display: flex;
-    flex-wrap: wrap; }
-  nav .menu-action {
-    display: flex;
-    flex-wrap: wrap; }
+  flex-wrap: wrap;
+}
+nav .brand {
+  position: relative;
+}
+nav .brand h3 {
+  position: absolute;
+  top: 12px;
+  left: 21px;
+  font-weight: 400;
+  color: white;
+}
+nav .brand h3 strong {
+  font-weight: 700;
+}
+nav .menu-nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+nav .menu-action {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .introduce {
-  background-image: url("../img/banner_bg02.jpg") cover center; }
+  background-image: url("../img/banner_bg02.jpg") cover center;
+}
+
+/*# sourceMappingURL=main.css.map */
