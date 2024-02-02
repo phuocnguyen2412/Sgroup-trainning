@@ -1,0 +1,42 @@
+footer {
+    .container {
+        .container-top {
+            .menu {
+                a {
+                    margin-right: 60px;
+                    display: inline-block;
+                }
+                justify-content: space-between;
+            }
+            .icons {
+                justify-content: flex-end;
+                i {
+                    margin-left: 40px;
+                    font-size: 24px;
+                    line-height: 24px;
+                    color: #0a142f;
+                    opacity: 0.3;
+                }
+            }
+        }
+        .container-bottom {
+            .container-bottom-right {
+                justify-content: flex-end;
+                a {
+                    text-align: right;
+                }
+            }
+        }
+        .scoll-top {
+            width: fit-content;
+            display: flex;
+            flex-direction: column;
+            button {
+                border-radius: 50%;
+                background-color: #5252cc;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+}
