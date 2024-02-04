@@ -1,3 +1,66 @@
 .introduce {
-    background-image: url("../img/banner_bg02.jpg") cover center;
+    background-image: url("../img/banner_bg02.jpg");
+    position: relative;
+    .content {
+        max-width: 1200px;
+        h1 {
+            font-size: 55px;
+            font-weight: 600;
+            letter-spacing: -0.55px;
+            line-height: 74.8px;
+            text-align: center;
+        }
+        img {
+            display: block;
+            max-width: 700px;
+            height: auto;
+            margin: 0 auto;
+        }
+        margin: 0 auto;
+    }
+    .icons-list {
+        position: absolute;
+        left: 55px;
+        bottom: 90px;
+        .icon-list--item {
+            margin-bottom: 25px;
+            border: 1px solid #f3f3f3;
+            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            i {
+                font-size: 15px;
+                color: #081a39;
+            }
+        }
+    }
+    .scoll-down {
+        position: absolute;
+        right: 55px;
+        bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        span {
+            color: #081a39;
+            font-size: 12px;
+            font-weight: 600;
+            grid-area: auto;
+
+            line-height: 21px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.515em;
+
+            transform: rotate(-90deg);
+            margin-bottom: 120px;
+            opacity: 0.4;
+        }
+        a {
+            display: inline-block;
+        }
+    }
 }
