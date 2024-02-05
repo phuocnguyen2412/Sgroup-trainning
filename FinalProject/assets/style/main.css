@@ -66,23 +66,45 @@ footer .container .scoll-top span {
 
 .introduce {
   background-image: url("../img/banner_bg02.jpg");
+  background-size: cover;
+  background-position: center;
   position: relative;
+  z-index: -2;
+  position: relative;
+  height: 820px;
+}
+.introduce::after {
+  content: "";
+  background-image: url("https://themedox.com/demo/bigtech-live/bigtech/assets/img/banner/banner_shape.svg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 722px;
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  z-index: -1;
 }
 .introduce .content {
   max-width: 1200px;
+  padding-top: 248px;
+  align-items: center;
   margin: 0 auto;
 }
 .introduce .content h1 {
+  color: #ffffff;
   font-size: 55px;
   font-weight: 600;
+  grid-area: auto;
   letter-spacing: -0.55px;
   line-height: 74.8px;
+  margin: 0px 0px 65px;
   text-align: center;
 }
 .introduce .content img {
   display: block;
-  max-width: 700px;
-  height: auto;
+  width: 70%;
   margin: 0 auto;
 }
 .introduce .icons-list {
@@ -134,31 +156,27 @@ nav {
   right: 0;
   z-index: 1000;
   font-family: "Outfit", sans-serif;
-  display: flex;
-  flex-wrap: wrap;
+  background-color: transparent;
+  padding: 30px 0;
 }
-nav .brand {
-  position: relative;
+nav .container {
+  margin: 0 auto;
+  width: 1488px;
 }
-nav .brand h3 {
-  position: absolute;
-  top: 12px;
-  left: 21px;
-  font-weight: 400;
-  color: white;
+nav .container .row {
+  justify-content: space-between;
+  align-items: center;
 }
-nav .brand h3 strong {
-  font-weight: 700;
+nav .container .row .menu-nav {
+  align-items: center;
 }
-nav .menu-nav {
-  display: flex;
-  flex-wrap: wrap;
+nav .container .row .menu-nav .menu-item {
+  margin-left: 66px;
+  color: #ffffff;
+  font-family: Outfit;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
-nav .menu-action {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 #subscribe {
   position: relative;
   z-index: 1000;
@@ -349,5 +367,4 @@ body {
   font-size: 16px;
   color: #030b15;
   background-color: #ffffff;
-  line-height: 28px;
 }/*# sourceMappingURL=main.css.map */
