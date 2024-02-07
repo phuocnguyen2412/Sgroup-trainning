@@ -1,0 +1,44 @@
+#download {
+    padding: 150px 0px 140px;
+    .download-content {
+        padding-top: 52px;
+        padding-right: 120px;
+        span {
+            color: #564dca;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 700;
+            grid-area: auto;
+            letter-spacing: 0.28px;
+            line-height: 24.5px;
+            margin: 0px 0px 18px;
+            text-transform: uppercase;
+        }
+        h2 {
+            color: #030b15;
+            font-family: Poppins;
+            font-size: 45px;
+            font-weight: 600;
+            grid-area: auto;
+            letter-spacing: -0.45px;
+            line-height: 56.7px;
+            text-transform: capitalize;
+            margin-bottom: 32px;
+        }
+        p {
+            color: #727885;
+            font-family: Outfit;
+            grid-area: auto;
+            line-height: 28px;
+            margin: 0px 0px 44px;
+        }
+    }
+    .download-link {
+        a {
+            margin-right: 20px;
+        }
+    }
+    .download-img {
+        padding-left: 20px;
+    }
+}

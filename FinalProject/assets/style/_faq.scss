@@ -1,0 +1,79 @@
+#faq {
+    background-color: #f3f6fc;
+    padding: 120px 0px 130px;
+    position: relative;
+    h2 {
+        color: #030b15;
+        font-family: Poppins;
+        font-size: 45px;
+        font-weight: 600;
+        grid-area: auto;
+        letter-spacing: -0.45px;
+        line-height: 56.7px;
+        text-align: center;
+        text-transform: capitalize;
+        margin-bottom: 64px;
+    }
+    .faq-content {
+        .faq-item {
+            cursor: pointer;
+            margin-bottom: 24px;
+            .question {
+                justify-content: space-between;
+                align-items: center;
+                background-color: #ffffff;
+                border-radius: 100px;
+                h3 {
+                    color: #212529;
+
+                    font-family: Poppins;
+                    font-size: 24px;
+                    font-weight: 500;
+                    grid-area: auto;
+                    line-height: 30px;
+                }
+                padding: 37px 55px 37px 55px;
+                text-align: left;
+                i {
+                    font-weight: 700;
+                    font-size: 25px;
+                    transform: rotate(90deg);
+                    color: #132047;
+                    opacity: 0.3;
+                }
+            }
+            .answer {
+                background-color: #ffffff;
+                line-height: 28px;
+                padding: 0px 40px 45px 55px;
+                color: #727885;
+                font-family: Outfit;
+                font-size: 18px;
+                grid-area: auto;
+                border-bottom: 4px solid #00c4f4;
+            }
+        }
+    }
+    .img2 {
+        position: absolute;
+
+        top: 172px;
+        right: 152px;
+        animation-name: rolate360;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+    }
+    .img1 {
+        position: absolute;
+        bottom: 214px;
+        left: 10%;
+    }
+}
+@keyframes rolate360 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

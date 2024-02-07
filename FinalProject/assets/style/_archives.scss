@@ -1,0 +1,34 @@
+#archives {
+    position: relative;
+    z-index: 10;
+    .container {
+        background-color: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0px 34px 35px rgba(160, 171, 191, 0.21);
+
+        margin: -120px auto 10px;
+        padding: 64px 75px 33px;
+        .archives-item {
+            &-title {
+                margin-left: 32px;
+                span {
+                    color: #030b15;
+                    font-size: 48px;
+                    font-weight: 600;
+                    grid-area: auto;
+                    letter-spacing: -0.96px;
+                    line-height: 40.8px;
+                    text-align: center;
+                    text-transform: capitalize;
+                }
+                p {
+                    margin-top: 4px;
+                    color: #646580;
+                    font-family: Outfit;
+                    grid-area: auto;
+                    line-height: 25.6px;
+                }
+            }
+        }
+    }
+}

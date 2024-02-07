@@ -4,10 +4,19 @@
 @import "./subscribe.scss";
 @import "./variable.scss";
 @import "./contact.scss";
+@import "./download.scss";
+@import "./outteam.scss";
+@import "./about.scss";
+@import "./reason.scss";
+@import "./archives.scss";
+@import "./faq.scss";
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+ul {
+    list-style: none;
 }
 button {
     align-items: flex-start;
@@ -35,5 +44,4 @@ body {
     font-size: 16px;
     color: #030b15;
     background-color: #ffffff;
-   
 }
