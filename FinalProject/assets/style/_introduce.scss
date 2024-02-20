@@ -87,3 +87,191 @@
         }
     }
 }
+@media screen and (min-width: 740px) and (max-width: 1239px) {
+    .introduce {
+        &::after {
+            content: "";
+            background-image: url("https://themedox.com/demo/bigtech-live/bigtech/assets/img/banner/banner_shape.svg");
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 722px;
+            display: block;
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            z-index: -1;
+        }
+        background-image: url("../img/banner_bg02.jpg");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        z-index: -2;
+        position: relative;
+        height: 820px;
+        .content {
+            max-width: 720px;
+
+            padding-top: 248px;
+
+            align-items: center;
+            h1 {
+                color: #ffffff;
+                font-size: 55px;
+                line-height: 1.2;
+                font-weight: 600;
+                grid-area: auto;
+                letter-spacing: -0.55px;
+
+                margin: 0px 0px 65px;
+                text-align: center;
+            }
+            img {
+                display: block;
+                width: 70%;
+                margin: 0 auto;
+            }
+            margin: 0 auto;
+        }
+        .icons-list {
+            display: none;
+            position: absolute;
+            left: 55px;
+            bottom: 90px;
+            .icon-list--item {
+                margin-bottom: 25px;
+                border: 1px solid #f3f3f3;
+                border-radius: 50%;
+                width: 42px;
+                height: 42px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                i {
+                    font-size: 15px;
+                    color: #081a39;
+                }
+            }
+        }
+        .scoll-down {
+            display: none;
+            position: absolute;
+            right: 55px;
+            bottom: 20px;
+
+            flex-direction: column;
+            span {
+                color: #081a39;
+                font-size: 12px;
+                font-weight: 600;
+                grid-area: auto;
+
+                line-height: 21px;
+
+                text-transform: uppercase;
+
+                letter-spacing: 0.515em;
+
+                transform: rotate(-90deg);
+                margin-bottom: 120px;
+                opacity: 0.4;
+            }
+            a {
+                display: inline-block;
+            }
+        }
+    }
+}
+@media screen and (max-width: 739px) {
+    .introduce {
+        &::after {
+            content: "";
+            background-image: url("https://themedox.com/demo/bigtech-live/bigtech/assets/img/banner/banner_shape.svg");
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 722px;
+            display: block;
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            z-index: -1;
+        }
+        background-image: url("../img/banner_bg02.jpg");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        z-index: -2;
+        position: relative;
+        height: 820px;
+        .content {
+            max-width: 360px;
+            padding-top: 248px;
+
+            align-items: center;
+            h1 {
+                color: #ffffff;
+                font-size: 32px;
+                font-weight: 600;
+                grid-area: auto;
+                letter-spacing: -0.55px;
+                line-height: 1.2;
+                margin: 0px 0px 65px;
+                text-align: center;
+            }
+            img {
+                display: block;
+                width: 100%;
+                margin: 0 auto;
+            }
+            margin: 0 auto;
+        }
+        .icons-list {
+            display: none;
+            position: absolute;
+            left: 55px;
+            bottom: 90px;
+            .icon-list--item {
+                margin-bottom: 25px;
+                border: 1px solid #f3f3f3;
+                border-radius: 50%;
+                width: 42px;
+                height: 42px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                i {
+                    font-size: 15px;
+                    color: #081a39;
+                }
+            }
+        }
+        .scoll-down {
+            display: none;
+            position: absolute;
+            right: 55px;
+            bottom: 20px;
+
+            flex-direction: column;
+            span {
+                color: #081a39;
+                font-size: 12px;
+                font-weight: 600;
+                grid-area: auto;
+
+                line-height: 21px;
+
+                text-transform: uppercase;
+
+                letter-spacing: 0.515em;
+
+                transform: rotate(-90deg);
+                margin-bottom: 120px;
+                opacity: 0.4;
+            }
+            a {
+                display: inline-block;
+            }
+        }
+    }
+}
