@@ -13,6 +13,7 @@
             line-height: 24.5px;
             margin: 0px 0px 18px;
             text-transform: uppercase;
+            text-decoration: underline;
         }
         h2 {
             color: #030b15;
@@ -21,7 +22,7 @@
             font-weight: 600;
             grid-area: auto;
             letter-spacing: -0.45px;
-            line-height: 56.7px;
+            line-height: 1.26;
             text-transform: capitalize;
             margin-bottom: 32px;
         }
@@ -40,5 +41,59 @@
     }
     .download-img {
         padding-left: 20px;
+    }
+}
+@media screen and (min-width: 740px) and (max-width: 1239px) {
+    #download .container > .row {
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+    #download {
+        padding: 150px 0px 140px;
+        .row {
+            .download-content {
+                margin-top: 56px;
+                padding: 0 24px;
+            }
+            .download-img {
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                img {
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 739px) {
+    #download .container > .row {
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+    #download {
+        padding: 150px 0px 140px;
+        .row {
+            .download-content {
+                margin-top: 56px;
+                padding: 0;
+                h2 {
+                    font-size: 24px;
+                }
+                .download-link {
+                    a {
+                        margin: 0 6px;
+                    }
+                }
+            }
+            .download-img {
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                img {
+                    width: 100%;
+                }
+            }
+        }
     }
 }

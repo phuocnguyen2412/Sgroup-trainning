@@ -9,8 +9,16 @@
         margin: -120px auto 10px;
         padding: 64px 75px 33px;
         .archives-item {
+            padding-bottom: 40px;
+            .row {
+                justify-content: center;
+            }
             &-title {
-                margin-left: 32px;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+
                 span {
                     color: #030b15;
                     font-size: 48px;
@@ -28,6 +36,17 @@
                     grid-area: auto;
                     line-height: 25.6px;
                 }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1239px) {
+    #archives {
+        .container {
+            .row {
+                justify-content: center;
+            }
+            .archives-item {
             }
         }
     }

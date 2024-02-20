@@ -111,10 +111,123 @@
             font-size: 20px;
             padding: 17px 22px;
             line-height: 1.5;
-            height: 66px;
+            height: 164px;
             margin-bottom: 20px;
             display: block;
             transition: 0.3s linear;
+        }
+        button {
+            padding: 25px 42px;
+        }
+        button:hover {
+            background: #564dca;
+        }
+        input:focus {
+            background-color: white;
+        }
+        textarea:focus {
+            background-color: white;
+        }
+    }
+}
+@media screen and (max-width: 1239px) {
+    #contact {
+        position: relative;
+
+        .container {
+            line-height: 28px;
+            padding: 130px 0 250px;
+        }
+        .contact-info {
+            margin-bottom: 60px;
+            h2 {
+                color: #ffffff;
+                font-size: 50px;
+                font-weight: 600;
+                grid-area: auto;
+                letter-spacing: -1.5px;
+                line-height: 60px;
+                margin: 0px 0px 35px;
+                text-transform: capitalize;
+            }
+            .contact-info-item {
+                background: linear-gradient(
+                        0deg,
+                        rgba(0, 0, 0, 0.2),
+                        rgba(0, 0, 0, 0.2)
+                    ),
+                    rgba(255, 255, 255, 0.06);
+                border: 1px solid rgba(246, 246, 246, 0.06);
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+                border-radius: 11px;
+                display: flex;
+                align-items: center;
+                padding: 22px 32px;
+                width: 100%;
+                margin-bottom: 15px;
+                img {
+                    width: 35px;
+                    height: 35px;
+                }
+                p {
+                    color: #ffffff;
+                    font-family: Outfit;
+                    font-size: 15px;
+                    grid-area: auto;
+                    line-height: 21.9px;
+                }
+            }
+        }
+        .sending-message {
+            padding: 0px;
+            h3 {
+                color: #ffffff;
+
+                font-size: 30px;
+                font-weight: 600;
+
+                letter-spacing: -0.9px;
+                line-height: 60px;
+                margin: 0px 0px 35px;
+            }
+            input {
+                background: rgba(255, 255, 255, 0.06);
+                border: 1px solid rgba(246, 246, 246, 0.06);
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+                border-radius: 11px;
+                width: 100%;
+                letter-spacing: -0.02em;
+                color: #030b15;
+                font-weight: 400;
+                font-size: 20px;
+                padding: 17px 22px;
+                line-height: 1.5;
+                height: 66px;
+                margin-bottom: 20px;
+                display: block;
+                transition: 0.3s linear;
+            }
+            textarea {
+                background: rgba(255, 255, 255, 0.06);
+                border: 1px solid rgba(246, 246, 246, 0.06);
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+                border-radius: 11px;
+                width: 100%;
+                letter-spacing: -0.02em;
+                color: #030b15;
+                font-weight: 400;
+                font-size: 20px;
+                padding: 17px 22px;
+                line-height: 1.5;
+                height: 164px;
+                margin-bottom: 20px;
+                display: block;
+                transition: 0.3s linear;
+                outline: none;
+            }
+            button {
+                padding: 25px 42px;
+            }
         }
     }
 }

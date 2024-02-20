@@ -10,6 +10,7 @@
 @import "./reason.scss";
 @import "./archives.scss";
 @import "./faq.scss";
+@import "./roadmap.scss";
 * {
     padding: 0;
     margin: 0;
@@ -18,30 +19,50 @@
 ul {
     list-style: none;
 }
+
 button {
-    align-items: flex-start;
-    background-color: #564dca;
-    border-radius: 5px;
     cursor: pointer;
+    border-radius: 5px;
+    border: none;
     color: #ffffff;
-    font-size: 13px;
+    display: inline-block;
+    font-family: Outfit;
+    font-size: 14px;
     font-weight: 700;
     grid-area: auto;
     letter-spacing: 0.5px;
-    line-height: 13px;
-    padding: 21px 47px;
+    line-height: 14px;
     text-align: center;
     text-transform: uppercase;
-    border: none;
+}
+.btn1 {
+    background-color: #00c4f4;
+    transition: background-color 0.4 0;
+}
+.btn1:hover {
+    background-color: #564dca;
+}
+.btn2 {
+    background-color: #564dca;
+}
+.btn2:hover {
+    background-color: #00c4f4;
 }
 a {
     color: #030b15;
     text-decoration: none;
 }
 body {
+    width: 100%;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 16px;
     color: #030b15;
     background-color: #ffffff;
+}
+input {
+    outline: none;
+}
+textarea {
+    outline: none;
 }

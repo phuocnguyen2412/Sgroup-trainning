@@ -6,18 +6,19 @@ footer {
             .menu {
                 a {
                     margin-right: 60px;
-                    display: inline-block;
                 }
                 justify-content: space-between;
             }
             .icons {
-                justify-content: flex-end;
-                i {
-                    margin-left: 28px;
-                    font-size: 24px;
-                    line-height: 24px;
-                    color: #0a142f;
-                    opacity: 0.3;
+                .row {
+                    justify-content: flex-end;
+                    i {
+                        margin-left: 28px;
+                        font-size: 24px;
+                        line-height: 24px;
+                        color: #0a142f;
+                        opacity: 0.3;
+                    }
                 }
             }
         }
@@ -26,20 +27,35 @@ footer {
             border-style: solid none none;
             border-width: 1px 0px 0px;
             padding: 40px;
+            .container-bottom-left {
+                p {
+                    color: #282f3b;
+
+                    font-size: 15px;
+                }
+            }
             .container-bottom-right {
-                justify-content: flex-end;
-                a {
-                    text-align: right;
+                .row {
+                    justify-content: flex-end;
+                    a {
+                        margin-left: 28px;
+                        text-align: right;
+                    }
                 }
             }
         }
         .scoll-top {
+            z-index: 10;
             position: absolute;
             display: flex;
             flex-direction: column;
             left: 50%;
             top: 55%;
             a {
+                text-align: center;
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
                 border-radius: 50%;
                 background-color: #5252cc;
                 display: block;
@@ -50,18 +66,98 @@ footer {
 
                 i {
                     display: block;
-                    margin: 0 auto;
+
                     transform: rotate(-90deg);
                     color: #f3f3f3;
                     font-size: 17px;
                     font-weight: 900;
                 }
             }
+            a:hover {
+                background-color: #00c4f4;
+            }
             span {
                 margin-top: 16px;
                 font-size: 14px;
                 text-align: center;
                 line-height: 24.5px;
+            }
+        }
+    }
+}
+@media screen and (min-width: 740px) and (max-width: 1239px) {
+    footer {
+        .container {
+            .container-top {
+                .menu {
+                    a {
+                        margin-right: 40px;
+                    }
+                    justify-content: space-between;
+                }
+                .icons {
+                    justify-content: flex-end;
+                    i {
+                        margin-left: 28px;
+                        font-size: 24px;
+                        line-height: 24px;
+                        color: #0a142f;
+                        opacity: 0.3;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 739px) {
+    footer {
+        .container {
+            .container-top {
+                padding: 40px 40px 30px;
+                .menu {
+                    .row {
+                        justify-content: space-between;
+                        a {
+                            margin-right: 0px;
+                        }
+                    }
+                }
+                .icons {
+                    margin-top: 28px;
+                    padding: 0 28px;
+                    .row {
+                        justify-content: space-between;
+
+                        i {
+                            margin-left: 0;
+                            font-size: 24px;
+                            line-height: 24px;
+                            color: #0a142f;
+                            opacity: 0.3;
+                        }
+                    }
+                }
+            }
+            .container-bottom {
+                border-color: #f0f3f9;
+                border-style: solid none none;
+                border-width: 1px 0px 0px;
+                padding: 24px 8px;
+
+                .container-bottom-right {
+                    margin-top: 16px;
+                    padding: 0 36px;
+                    .row {
+                        justify-content: space-between;
+                        a {
+                            margin-left: 0;
+                            text-align: right;
+                        }
+                    }
+                }
+            }
+            .scoll-top {
+                display: none;
             }
         }
     }

@@ -71,6 +71,11 @@
         }
     }
     button {
+        background-color: #564dca;
+        padding: 25px 42px;
         margin-top: 40px;
+    }
+    button:hover {
+        background-color: #00c4f4;
     }
 }

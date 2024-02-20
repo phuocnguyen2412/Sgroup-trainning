@@ -60,7 +60,7 @@
         top: 172px;
         right: 152px;
         animation-name: rolate360;
-        animation-duration: 2s;
+        animation-duration: infinite;
         animation-timing-function: linear;
     }
     .img1 {
@@ -75,5 +75,70 @@
     }
     100% {
         transform: rotate(360deg);
+    }
+}
+@media screen and (max-width: 739px) {
+    #faq {
+        background-color: #f3f6fc;
+        padding: 115px 0 120px;
+        position: relative;
+        h2 {
+            font-size: 24px;
+        }
+        .faq-content {
+            .faq-item {
+                cursor: pointer;
+                margin-bottom: 24px;
+                .question {
+                    padding: 25px;
+                    flex-wrap: nowrap;
+                    justify-content: space-between;
+                    align-items: center;
+                    background-color: #ffffff;
+                    border-radius: 100px;
+                    h3 {
+                        color: #212529;
+
+                        font-family: Poppins;
+                        font-size: 18px;
+                        font-weight: 500;
+                        grid-area: auto;
+                        line-height: 30px;
+                    }
+
+                    i {
+                        font-weight: 700;
+                        font-size: 25px;
+                        transform: rotate(90deg);
+                        color: #132047;
+                        opacity: 0.3;
+                    }
+                }
+                .answer {
+                    background-color: #ffffff;
+                    line-height: 28px;
+                    padding: 0 25px 40px 25px;
+                    color: #727885;
+                    font-family: Outfit;
+                    font-size: 18px;
+                    grid-area: auto;
+                    border-bottom: 4px solid #00c4f4;
+                }
+            }
+        }
+        .img2 {
+            position: absolute;
+
+            top: 172px;
+            right: 152px;
+            animation-name: rolate360;
+            animation-duration: infinite;
+            animation-timing-function: linear;
+        }
+        .img1 {
+            position: absolute;
+            bottom: 214px;
+            left: 10%;
+        }
     }
 }

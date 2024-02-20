@@ -6,9 +6,10 @@
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0px 26px 23px rgba(81, 98, 132, 0.06);
+
     .title {
-        align-items: center;
-        h2 {
+        label {
+            display: block;
             padding: 0;
             margin: 0;
             color: #030b15;
@@ -17,31 +18,56 @@
             font-weight: 600;
             grid-area: auto;
             letter-spacing: -1px;
-            line-height: 48px;
+            line-height: 72px;
             text-transform: capitalize;
         }
     }
 
     .input {
-        background-color: #f3f6fc;
-        padding: 4px;
         border-radius: 4px;
         display: inline-block;
+        background-color: #f3f6fc;
+        input {
+            line-height: 20px;
+            width: 100%;
+            font-size: 16px;
+            background-color: transparent;
+            color: #030b15;
+            display: inline-block;
+            border: none;
+            padding: 26px 0px 26px 25px;
+        }
+    }
+    button {
+        position: absolute;
+        right: 60px;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 21px 47px;
+    }
+}
+@media screen and (max-width: 739px) {
+    #subscribe {
+        position: relative;
+        z-index: 1000;
+        padding: 40px 26px 0px;
+        margin-top: -120px;
 
-        .row {
-            justify-content: space-between;
-
-            input {
-                font-size: 16px;
-                background-color: transparent;
-                color: #030b15;
-                display: inline-block;
-                border: none;
-                line-height: 20px;
-                grid-area: auto;
-                line-height: 20px;
-                padding: 26px 0px 26px 25px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 26px 23px rgba(81, 98, 132, 0.06);
+        .title {
+            label {
+                font-size: 24px;
+                text-align: center;
             }
+        }
+
+        .input {
+        }
+        button {
+            position: static;
+            margin: 58px auto 0;
         }
     }
 }
