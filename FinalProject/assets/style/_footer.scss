@@ -89,22 +89,43 @@ footer {
     footer {
         .container {
             .container-top {
+                padding: 70px 0 65px;
                 .menu {
                     a {
-                        margin-right: 40px;
+                        margin-right: 28px;
                     }
                     justify-content: space-between;
                 }
                 .icons {
                     justify-content: flex-end;
-                    i {
-                        margin-left: 28px;
-                        font-size: 24px;
-                        line-height: 24px;
-                        color: #0a142f;
-                        opacity: 0.3;
+                    .row {
+                        i {
+                            margin-left: 40px;
+                            font-size: 24px;
+                            line-height: 24px;
+                            color: #0a142f;
+                            opacity: 0.3;
+                        }
                     }
                 }
+            }
+            .container-bottom {
+                .container-bottom-left {
+                    p {
+                        text-align: center;
+                    }
+                }
+                .container-bottom-right {
+                    .row {
+                        justify-content: center;
+                        a {
+                            margin: 12px 15px;
+                        }
+                    }
+                }
+            }
+            .scoll-top {
+                display: none;
             }
         }
     }

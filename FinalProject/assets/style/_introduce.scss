@@ -1,4 +1,11 @@
 .introduce {
+    background-image: url("../img/banner_bg02.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+
+    height: 820px;
     &::after {
         content: "";
         background-image: url("https://themedox.com/demo/bigtech-live/bigtech/assets/img/banner/banner_shape.svg");
@@ -12,13 +19,6 @@
         left: 0;
         z-index: -1;
     }
-    background-image: url("../img/banner_bg02.jpg");
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    z-index: -2;
-    position: relative;
-    height: 820px;
     .content {
         max-width: 1200px;
         padding-top: 248px;
@@ -44,10 +44,10 @@
     .icons-list {
         position: absolute;
         left: 55px;
-        bottom: 90px;
+        bottom: -30px;
         .icon-list--item {
             margin-bottom: 25px;
-            border: 1px solid #f3f3f3;
+
             border-radius: 50%;
             width: 42px;
             height: 42px;
@@ -62,28 +62,33 @@
     }
     .scoll-down {
         position: absolute;
-        right: 55px;
+        right: -45px;
         bottom: 20px;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+
+        justify-content: center;
+        align-items: center;
+        transform: rotate(-90deg);
         span {
             color: #081a39;
             font-size: 12px;
             font-weight: 600;
             grid-area: auto;
-
-            line-height: 21px;
+            margin-left: 60px;
 
             text-transform: uppercase;
 
             letter-spacing: 0.515em;
 
-            transform: rotate(-90deg);
-            margin-bottom: 120px;
             opacity: 0.4;
         }
         a {
+            transform: rotate(90deg);
             display: inline-block;
+            img {
+                cursor: pointer;
+            }
         }
     }
 }
@@ -95,7 +100,7 @@
             background-size: cover;
             background-position: center;
             width: 100%;
-            height: 722px;
+            height: 304px;
             display: block;
             position: absolute;
             bottom: -1px;
@@ -112,7 +117,7 @@
         .content {
             max-width: 720px;
 
-            padding-top: 248px;
+            padding-top: 168px;
 
             align-items: center;
             h1 {
@@ -128,8 +133,8 @@
             }
             img {
                 display: block;
-                width: 70%;
-                margin: 0 auto;
+                width: 100%;
+                margin: 8px auto -30px;
             }
             margin: 0 auto;
         }
