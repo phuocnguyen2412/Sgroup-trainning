@@ -1,4 +1,5 @@
 .tablet-moblie-nav {
+    display: none;
     width: 100%;
     position: fixed;
     top: 0;
@@ -102,7 +103,6 @@
 }
 header {
     nav {
-        display: none;
         position: fixed;
         top: 0;
         width: 100%;
@@ -131,8 +131,13 @@ header {
                             letter-spacing: 1px;
                         }
                         .sub-menu-nav {
+                            transform: perspective(400px) rotateX(-45deg);
+                            transition: all 0.3s ease-out 0s;
+                            visibility: hidden;
+                            opacity: 0;
+                            transform-origin: top center;
                             line-height: normal;
-                            display: none;
+
                             background-color: #0b1d33;
                             min-width: 230px;
                             position: absolute;
@@ -153,7 +158,9 @@ header {
                             }
                         }
                         &:hover .sub-menu-nav {
-                            display: block;
+                            visibility: visible;
+                            opacity: 1;
+                            transform: perspective(400px) rotateX(0deg);
                         }
                     }
                 }
@@ -185,11 +192,18 @@ header {
                         }
 
                         &:hover .sub-menu-nav {
-                            display: block;
+                            visibility: visible;
+                            opacity: 1;
+                            transform: perspective(400px) rotateX(0deg);
                         }
                         .sub-menu-nav {
+                            transform: perspective(400px) rotateX(-45deg);
+                            transition: all 0.3s ease-out 0s;
+                            visibility: hidden;
+                            opacity: 0;
+                            transform-origin: top center;
                             min-width: 96px;
-                            display: none;
+
                             background-color: #0b1d33;
                             line-height: normal;
                             position: absolute;

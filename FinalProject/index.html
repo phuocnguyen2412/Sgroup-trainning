@@ -103,7 +103,7 @@
                         <div class="menu-nav">
                             <ul class="row">
                                 <li class="menu-item">
-                                    <a href="">HOME</a>
+                                    <a href="#introduce">HOME</a>
                                     <ul class="sub-menu-nav">
                                         <li class="sub-menu-nav-item">
                                             <a href="">HOME ONE</a>
@@ -114,16 +114,16 @@
                                     </ul>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="">ABOUT US</a>
+                                    <a href="#about">ABOUT US</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="">ROAD MAP</a>
+                                    <a href="#roadmap">ROAD MAP</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="">FAQ</a>
+                                    <a href="#faq">FAQ</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="">BLOG</a>
+                                    <a href="#blog">BLOG</a>
                                     <ul class="sub-menu-nav">
                                         <li class="sub-menu-nav-item">
                                             <a href="">OUR BLOG</a>
@@ -134,7 +134,9 @@
                                     </ul>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="" class="menu-item">CONTACT US</a>
+                                    <a href="#contact" class="menu-item"
+                                        >CONTACT US</a
+                                    >
                                 </li>
                             </ul>
                         </div>
@@ -160,12 +162,12 @@
                                     </div>
                                 </li>
                                 <li class="menu-action-item nav-button">
-                                    <button class="btn1">BUY NOW</button>
+                                    <button class="btn-blue">BUY NOW</button>
                                 </li>
                             </ul>
                             <ul class="row tablet-menu-action">
                                 <li class="menu-action-item nav-button">
-                                    <button class="btn1">BUY NOW</button>
+                                    <button class="btn-blue">BUY NOW</button>
                                 </li>
                                 <li>
                                     <i class="fa-solid fa-bars"></i>
@@ -177,7 +179,7 @@
             </nav>
         </header>
         <main>
-            <section class="introduce">
+            <section class="introduce" id="introduce">
                 <div class="introduce-bg">
                     <div class="content row">
                         <h1>
@@ -212,7 +214,7 @@
                         </div>
                     </div>
                     <div class="scoll-down">
-                        <a href=""
+                        <a href="#about"
                             ><img src="./assets/img/scroll_icon.svg" alt=""
                         /></a>
                         <span>SCROLL DOWN</span>
@@ -253,7 +255,9 @@
                                     can mountain thought
                                 </li>
                             </ul>
-                            <button>DOWNNLOAD DOCUMENT</button>
+                            <button class="btn-purple">
+                                DOWNNLOAD DOCUMENT
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -349,7 +353,7 @@
                     </div>
                 </div>
             </section>
-            <div id="roadmap">
+            <section id="roadmap">
                 <div class="custom-container">
                     <span>ROADMAP</span>
                     <h3>Bigtech Strategy And <br />Project Plan</h3>
@@ -460,7 +464,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
             <section id="out-team">
                 <div class="grid container">
                     <div class="title">
@@ -772,10 +776,12 @@
                                 placeholder="Email Andress"
                                 class="sending-message-name"
                             />
-                            <textarea class="sending-message-massage">
-Message
+                            <textarea
+                                placeholder="Message"
+                                class="sending-message-massage"
+                            >
                             </textarea>
-                            <button class="btn1">SEND MESSAGE</button>
+                            <button class="btn-purple">SEND MESSAGE</button>
                         </div>
                     </div>
                 </div>
@@ -792,7 +798,7 @@ Message
                             placeholder="Enter your email"
                         />
                     </div>
-                    <button class="btn2">SUBSCRIBE</button>
+                    <button class="btn-purple">SUBSCRIBE</button>
                 </div>
             </section>
         </main>
@@ -835,10 +841,13 @@ Message
                     </div>
                 </div>
                 <div class="scoll-top">
-                    <a href=""><i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#introduce"
+                        ><i class="fa-solid fa-arrow-right"></i
+                    ></a>
                     <span>scroll Top</span>
                 </div>
             </div>
         </footer>
+        <script src="./js/index.js"></script>
     </body>
 </html>

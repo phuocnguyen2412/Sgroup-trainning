@@ -1,15 +1,20 @@
+@import "./animation";
+
 #about {
     .container {
         position: relative;
         .shape1 {
             left: 0;
-            bottom: 0;
+            bottom: -40px;
             position: absolute;
+            animation: di_chuyen_ngang 5s linear infinite;
         }
         .shape2 {
             right: 0;
-            top: 0;
+            bottom: 16px;
             position: absolute;
+
+            animation: rolate360 10s linear infinite;
         }
     }
 

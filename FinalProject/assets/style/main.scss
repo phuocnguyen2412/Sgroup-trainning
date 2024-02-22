@@ -16,6 +16,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+}
 ul {
     list-style: none;
 }
@@ -34,18 +37,18 @@ button {
     line-height: 14px;
     text-align: center;
     text-transform: uppercase;
+    transition: all 0.4s 0s;
 }
-.btn1 {
+.btn-blue {
     background-color: #00c4f4;
-    transition: background-color 0.4 0;
 }
-.btn1:hover {
+.btn-blue:hover {
     background-color: #564dca;
 }
-.btn2 {
+.btn-purple {
     background-color: #564dca;
 }
-.btn2:hover {
+.btn-purple:hover {
     background-color: #00c4f4;
 }
 a {
@@ -60,6 +63,7 @@ body {
     color: #030b15;
     background-color: #ffffff;
     position: relative;
+    scroll-behavior: smooth;
 }
 input {
     outline: none;

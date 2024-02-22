@@ -1,3 +1,4 @@
+@import "./animation.scss";
 #faq {
     background-color: #f3f6fc;
     padding: 120px 0px 130px;
@@ -23,6 +24,7 @@
                 align-items: center;
                 background-color: #ffffff;
                 border-radius: 100px;
+                transition: all 0.3 linear;
                 h3 {
                     color: #212529;
 
@@ -59,23 +61,17 @@
 
         top: 172px;
         right: 152px;
-        animation-name: rolate360;
-        animation-duration: infinite;
-        animation-timing-function: linear;
+        animation: rolate360 10s linear infinite;
     }
     .img1 {
         position: absolute;
-        bottom: 214px;
+        bottom: 60px;
         left: 10%;
+        animation: di_chuyen_ngang 5s linear infinite;
     }
 }
-@keyframes rolate360 {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+.faq-item-active {
+    border-radius: 0;
 }
 @media screen and (max-width: 739px) {
     #faq {

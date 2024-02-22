@@ -7,8 +7,15 @@
     </head>
     <body>
         <script>
-            let a = "alo alo alo alo alo alo alo alo alo"
-            console.log("Hello world! " + a);
+            const date = new Date();
+            const day = date.getDate();
+            const month = date.getMonth() + 1;
+            const year = date.getFullYear();
+            const hour = date.getHours();
+            const min = date.getMinutes();
+            const sec = date.getSeconds();
+            console.log(`${day}/${month}/${year}`);
+            console.log(`${hour}-${min}-${sec} ${day}-${month}-${year}`);
         </script>
     </body>
 </html>

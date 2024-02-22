@@ -57,6 +57,7 @@ footer .container .scoll-top a {
   width: 40px;
   height: 40px;
   border: none;
+  transition: all 0.4s 0s;
 }
 footer .container .scoll-top a i {
   display: block;
@@ -202,6 +203,7 @@ footer .container .scoll-top span {
 }
 .introduce .icons-list .icon-list--item {
   margin-bottom: 25px;
+  border: 1px solid #f3f3f3;
   border-radius: 50%;
   width: 42px;
   height: 42px;
@@ -396,7 +398,7 @@ footer .container .scoll-top span {
     display: none;
     position: absolute;
     right: 55px;
-    bottom: 20px;
+    bottom: 60px;
     flex-direction: column;
   }
   .introduce .scoll-down span {
@@ -416,6 +418,7 @@ footer .container .scoll-top span {
   }
 }
 .tablet-moblie-nav {
+  display: none;
   width: 100%;
   position: fixed;
   top: 0;
@@ -506,7 +509,6 @@ footer .container .scoll-top span {
 }
 
 header nav {
-  display: none;
   position: fixed;
   top: 0;
   width: 100%;
@@ -539,8 +541,12 @@ header nav .container .row .menu-nav .menu-item a {
   letter-spacing: 1px;
 }
 header nav .container .row .menu-nav .menu-item .sub-menu-nav {
+  transform: perspective(400px) rotateX(-45deg);
+  transition: all 0.3s ease-out 0s;
+  visibility: hidden;
+  opacity: 0;
+  transform-origin: top center;
   line-height: normal;
-  display: none;
   background-color: #0b1d33;
   min-width: 230px;
   position: absolute;
@@ -561,7 +567,9 @@ header nav .container .row .menu-nav .menu-item .sub-menu-nav li a {
   letter-spacing: 1px;
 }
 header nav .container .row .menu-nav .menu-item:hover .sub-menu-nav {
-  display: block;
+  visibility: visible;
+  opacity: 1;
+  transform: perspective(400px) rotateX(0deg);
 }
 header nav .container .row .menu-action {
   margin-left: auto;
@@ -591,11 +599,17 @@ header nav .container .row .menu-action .lang .lang-selected::after {
   margin-left: 10px;
 }
 header nav .container .row .menu-action .lang:hover .sub-menu-nav {
-  display: block;
+  visibility: visible;
+  opacity: 1;
+  transform: perspective(400px) rotateX(0deg);
 }
 header nav .container .row .menu-action .lang .sub-menu-nav {
+  transform: perspective(400px) rotateX(-45deg);
+  transition: all 0.3s ease-out 0s;
+  visibility: hidden;
+  opacity: 0;
+  transform-origin: top center;
   min-width: 96px;
-  display: none;
   background-color: #0b1d33;
   line-height: normal;
   position: absolute;
@@ -893,9 +907,6 @@ header nav .container .row .menu-action .nav-button button {
 }
 #contact .sending-message button {
   padding: 25px 42px;
-}
-#contact .sending-message button:hover {
-  background: #564dca;
 }
 #contact .sending-message input:focus {
   background-color: white;
@@ -1273,6 +1284,25 @@ header nav .container .row .menu-action .nav-button button {
     width: 100%;
   }
 }
+@keyframes rolate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes di_chuyen_ngang {
+  0% {
+    transform: rotateX(0deg) translateX(0px);
+  }
+  50% {
+    transform: rotateX(0deg) translateX(50px);
+  }
+  100% {
+    transform: rotateX(0deg) translateX(0px);
+  }
+}
 #about {
   padding: 130px 0px;
 }
@@ -1281,13 +1311,15 @@ header nav .container .row .menu-action .nav-button button {
 }
 #about .container .shape1 {
   left: 0;
-  bottom: 0;
+  bottom: -40px;
   position: absolute;
+  animation: di_chuyen_ngang 5s linear infinite;
 }
 #about .container .shape2 {
   right: 0;
-  top: 0;
+  bottom: 16px;
   position: absolute;
+  animation: rolate360 10s linear infinite;
 }
 #about .about-img {
   padding: 0px 15px;
@@ -1845,6 +1877,25 @@ header nav .container .row .menu-action .nav-button button {
     justify-content: center;
   }
 }
+@keyframes rolate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes di_chuyen_ngang {
+  0% {
+    transform: rotateX(0deg) translateX(0px);
+  }
+  50% {
+    transform: rotateX(0deg) translateX(50px);
+  }
+  100% {
+    transform: rotateX(0deg) translateX(0px);
+  }
+}
 #faq {
   background-color: #f3f6fc;
   padding: 120px 0px 130px;
@@ -1871,6 +1922,7 @@ header nav .container .row .menu-action .nav-button button {
   align-items: center;
   background-color: #ffffff;
   border-radius: 100px;
+  transition: all 0.3 linear;
   padding: 37px 55px 37px 55px;
   text-align: left;
 }
@@ -1903,24 +1955,19 @@ header nav .container .row .menu-action .nav-button button {
   position: absolute;
   top: 172px;
   right: 152px;
-  animation-name: rolate360;
-  animation-duration: infinite;
-  animation-timing-function: linear;
+  animation: rolate360 10s linear infinite;
 }
 #faq .img1 {
   position: absolute;
-  bottom: 214px;
+  bottom: 60px;
   left: 10%;
+  animation: di_chuyen_ngang 5s linear infinite;
 }
 
-@keyframes rolate360 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.faq-item-active {
+  border-radius: 0;
 }
+
 @media screen and (max-width: 739px) {
   #faq {
     background-color: #f3f6fc;
@@ -2299,6 +2346,10 @@ header nav .container .row .menu-action .nav-button button {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 ul {
   list-style: none;
 }
@@ -2317,22 +2368,22 @@ button {
   line-height: 14px;
   text-align: center;
   text-transform: uppercase;
+  transition: all 0.4s 0s;
 }
 
-.btn1 {
+.btn-blue {
   background-color: #00c4f4;
-  transition: background-color 0.4 0;
 }
 
-.btn1:hover {
+.btn-blue:hover {
   background-color: #564dca;
 }
 
-.btn2 {
+.btn-purple {
   background-color: #564dca;
 }
 
-.btn2:hover {
+.btn-purple:hover {
   background-color: #00c4f4;
 }
 
@@ -2349,6 +2400,7 @@ body {
   color: #030b15;
   background-color: #ffffff;
   position: relative;
+  scroll-behavior: smooth;
 }
 
 input {
