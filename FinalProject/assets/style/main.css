@@ -1942,6 +1942,7 @@ header nav .container .row .menu-action .nav-button button {
   opacity: 0.3;
 }
 #faq .faq-content .faq-item .answer {
+  display: none;
   background-color: #ffffff;
   line-height: 28px;
   padding: 0px 40px 45px 55px;
@@ -1950,6 +1951,12 @@ header nav .container .row .menu-action .nav-button button {
   font-size: 18px;
   grid-area: auto;
   border-bottom: 4px solid #00c4f4;
+}
+#faq .faq-content .faq-item .answer-active {
+  display: block !important;
+}
+#faq .faq-content .faq-item-active {
+  border-radius: 0px !important;
 }
 #faq .img2 {
   position: absolute;
@@ -1965,7 +1972,7 @@ header nav .container .row .menu-action .nav-button button {
 }
 
 .faq-item-active {
-  border-radius: 0;
+  border-radius: 0px !important;
 }
 
 @media screen and (max-width: 739px) {
