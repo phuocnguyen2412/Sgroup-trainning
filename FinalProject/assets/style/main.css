@@ -228,6 +228,11 @@ footer .container .scoll-top span {
   animation-fill-mode: forwards;
 }
 
+.fadeDown {
+  animation: fadeDown 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
 .fadeUpDelay1 {
   animation: fadeUp 1s ease-in-out;
   animation-fill-mode: forwards;
@@ -532,8 +537,127 @@ footer .container .scoll-top span {
     display: inline-block;
   }
 }
+@keyframes rolate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes di_chuyen_ngang {
+  0% {
+    transform: rotateX(0deg) translateX(0px);
+  }
+  50% {
+    transform: rotateX(0deg) translateX(50px);
+  }
+  100% {
+    transform: rotateX(0deg) translateX(0px);
+  }
+}
+@keyframes fadeLeftToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+.fadeLeftToRight {
+  animation: fadeLeftToRight 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.fadeRightToLeft {
+  animation: fadeRightToLeft 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeRightToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-20px);
+  }
+}
+.fadeUp {
+  animation: fadeUp 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.fadeDown {
+  animation: fadeDown 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.fadeUpDelay1 {
+  animation: fadeUp 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.fadeUpDelay2 {
+  animation: fadeUp 1s ease-in-out;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
+}
+
+.fadeUpDelay3 {
+  animation: fadeUp 1s ease-in-out;
+  animation-delay: 0.8s;
+  animation-fill-mode: forwards;
+}
+
+.fadeUpDelay4 {
+  animation: fadeUp 1s ease-in-out;
+  animation-delay: 1.2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOutBorder {
+  0% {
+    border-radius: 0;
+  }
+  100% {
+    border-radius: 100px;
+  }
+}
+@keyframes fadeInBorder {
+  0% {
+    border-radius: 100px;
+  }
+  100% {
+    border-radius: 0;
+  }
+}
 .tablet-moblie-nav {
   display: none;
+  opacity: 0;
   width: 100%;
   position: fixed;
   top: 0;
@@ -545,6 +669,9 @@ footer .container .scoll-top span {
   overflow-x: hidden;
   padding: 0px 0px;
   z-index: 10000;
+}
+.tablet-moblie-nav .row {
+  height: 100%;
 }
 .tablet-moblie-nav .background-drop {
   opacity: 0.8;
@@ -623,6 +750,12 @@ footer .container .scoll-top span {
   color: #fff;
 }
 
+.tablet-moblie-nav-active {
+  display: block;
+  animation: fadeRightToLeft 0.25s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
 header .nav-sticky {
   background: #030b15;
   position: fixed;
@@ -644,17 +777,26 @@ header nav {
 header nav .container {
   margin: 0 auto;
   width: 1488px;
+  height: 100%;
 }
 header nav .container .row {
   align-items: center;
   flex-wrap: nowrap;
+  height: 100%;
 }
 header nav .container .row .menu-nav {
+  display: block;
+  height: 100%;
   padding-left: 146px;
 }
 header nav .container .row .menu-nav .menu-item {
+  display: inline-block;
   margin-right: 40px;
   position: relative;
+  height: 100%;
+}
+header nav .container .row .menu-nav .menu-item:hover a {
+  color: #00c4f4;
 }
 header nav .container .row .menu-nav .menu-item a {
   line-height: normal !important;
@@ -684,6 +826,9 @@ header nav .container .row .menu-nav .menu-item .sub-menu-nav {
 }
 header nav .container .row .menu-nav .menu-item .sub-menu-nav li {
   padding: 9px 15px 9px 25px;
+}
+header nav .container .row .menu-nav .menu-item .sub-menu-nav li:hover a {
+  color: #00c4f4;
 }
 header nav .container .row .menu-nav .menu-item .sub-menu-nav li a {
   margin: 9px 0;
@@ -1503,6 +1648,11 @@ header nav .container .row .menu-action .nav-button button {
   animation-fill-mode: forwards;
 }
 
+.fadeDown {
+  animation: fadeDown 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
 .fadeUpDelay1 {
   animation: fadeUp 1s ease-in-out;
   animation-fill-mode: forwards;
@@ -2196,6 +2346,11 @@ header nav .container .row .menu-action .nav-button button {
   animation-fill-mode: forwards;
 }
 
+.fadeDown {
+  animation: fadeDown 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
 .fadeUpDelay1 {
   animation: fadeUp 1s ease-in-out;
   animation-fill-mode: forwards;
@@ -2826,6 +2981,11 @@ header nav .container .row .menu-action .nav-button button {
 }
 .fadeUp {
   animation: fadeUp 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.fadeDown {
+  animation: fadeDown 1s ease-in-out;
   animation-fill-mode: forwards;
 }
 

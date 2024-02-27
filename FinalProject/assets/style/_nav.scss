@@ -1,5 +1,7 @@
+@import "./animation";
 .tablet-moblie-nav {
     display: none;
+    opacity: 0;
     width: 100%;
     position: fixed;
     top: 0;
@@ -12,6 +14,9 @@
 
     padding: 0px 0px;
     z-index: 10000;
+    .row {
+        height: 100%;
+    }
     .background-drop {
         opacity: 0.8;
         background: #0b1d33;
@@ -101,6 +106,11 @@
         }
     }
 }
+.tablet-moblie-nav-active {
+    display: block;
+    animation: fadeRightToLeft 0.25s ease-in-out;
+    animation-fill-mode: forwards;
+}
 header {
     .nav-sticky {
         background: #030b15;
@@ -122,15 +132,24 @@ header {
         .container {
             margin: 0 auto;
             width: 1488px;
+            height: 100%;
             .row {
                 align-items: center;
                 flex-wrap: nowrap;
+                height: 100%;
 
                 .menu-nav {
+                    display: block;
+                    height: 100%;
                     padding-left: 146px;
                     .menu-item {
+                        display: inline-block;
                         margin-right: 40px;
                         position: relative;
+                        height: 100%;
+                        &:hover a {
+                            color: #00c4f4;
+                        }
                         a {
                             line-height: normal !important;
                             font-size: 14px;
@@ -159,6 +178,9 @@ header {
                             padding: 18px 0;
                             li {
                                 padding: 9px 15px 9px 25px;
+                                &:hover a {
+                                    color: #00c4f4;
+                                }
                                 a {
                                     margin: 9px 0;
                                     font-style: 14px;

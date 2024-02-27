@@ -47,6 +47,15 @@ document.addEventListener("DOMContentLoaded", function () {
     // Update the countdown every second
     setInterval(updateCountdown, 1000);
 });
+function handleClickMobileNavClose() {
+    $(".tablet-moblie-nav").classList.remove("tablet-moblie-nav-active");
+    $(".tablet-moblie-nav").classList.add("tablet-moblie-nav-disabled");
+}
+function handleClickMobileNavOpen() {
+    $(".tablet-moblie-nav").classList.remove("tablet-moblie-nav-disabled");
+
+    $(".tablet-moblie-nav").classList.add("tablet-moblie-nav-active");
+}
 window.addEventListener("scroll", function () {
     // About //
     const about = $("#about");
@@ -60,8 +69,15 @@ window.addEventListener("scroll", function () {
     }
     //----------------------------------------------------------------
     //Nav//
-    if (scrollPosition > about.offsetTop - window.innerHeight) {
+    if (
+        window.innerWidth > 1239 &&
+        scrollPosition > about.offsetTop - window.innerHeight
+    ) {
         $("#nav").classList.add("nav-sticky");
+        $("#nav").classList.add("fadeDown");
+    } else {
+        $("#nav").classList.remove("nav-sticky");
+        $("#nav").classList.remove("fadeDown");
     }
     //----------------------------------------------------------------
     // Reason //
@@ -71,7 +87,10 @@ window.addEventListener("scroll", function () {
     const reason_item_3 = $(".reason-item-3");
     const reason_item_4 = $(".reason-item-4");
 
-    if (scrollPosition - 400 > reason.offsetTop - window.innerHeight) {
+    if (
+        window.innerWidth > 1239 &&
+        scrollPosition - 400 > reason.offsetTop - window.innerHeight
+    ) {
         reason_item_1.classList.add("fadeUpDelay1");
         reason_item_2.classList.add("fadeUpDelay2");
         reason_item_3.classList.add("fadeUpDelay3");
@@ -84,7 +103,10 @@ window.addEventListener("scroll", function () {
     const out_team_item_2 = $(".out-team-item-2");
     const out_team_item_3 = $(".out-team-item-3");
     const out_team_item_4 = $(".out-team-item-4");
-    if (scrollPosition - 400 > out_team.offsetTop - window.innerHeight) {
+    if (
+        window.innerWidth > 1239 &&
+        scrollPosition - 400 > out_team.offsetTop - window.innerHeight
+    ) {
         out_team_item_1.classList.add("fadeUpDelay1");
         out_team_item_2.classList.add("fadeUpDelay2");
         out_team_item_3.classList.add("fadeUpDelay3");
@@ -95,7 +117,10 @@ window.addEventListener("scroll", function () {
     const download = $("#download");
     const download_content = $(".download-content");
     const download_img = $(".download-img");
-    if (scrollPosition - 400 > download.offsetTop - window.innerHeight) {
+    if (
+        window.innerWidth > 1239 &&
+        scrollPosition - 400 > download.offsetTop - window.innerHeight
+    ) {
         download_content.classList.add("fadeLeftToRight");
         download_img.classList.add("fadeRightToLeft");
     }
@@ -104,7 +129,10 @@ window.addEventListener("scroll", function () {
     // Faq //
     const faq = $("#faq");
     const faq_content = $(".faq-content");
-    if (scrollPosition - 400 > faq.offsetTop - window.innerHeight) {
+    if (
+        window.innerWidth > 1239 &&
+        scrollPosition - 400 > faq.offsetTop - window.innerHeight
+    ) {
         faq_content.classList.add("fadeUp");
     }
     // Contact //

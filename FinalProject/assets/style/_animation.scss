@@ -76,6 +76,10 @@
     animation: fadeUp 1s ease-in-out;
     animation-fill-mode: forwards;
 }
+.fadeDown {
+    animation: fadeDown 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
 .fadeUpDelay1 {
     animation: fadeUp 1s ease-in-out;
     animation-fill-mode: forwards;

@@ -25,12 +25,18 @@
     <body>
         <nav class="tablet-moblie-nav">
             <div class="row">
-                <div class="background-drop l-0 m-8 c-3"></div>
+                <div
+                    class="background-drop l-0 m-8 c-3"
+                    onClick="handleClickMobileNavClose()"
+                ></div>
                 <div class="custom-container l-0 m-4 c-9">
                     <div class="nav-header">
                         <div class="row">
                             <img src="./assets/img/logo.png" alt="" />
-                            <i class="fa-solid fa-xmark"></i>
+                            <i
+                                onClick="handleClickMobileNavClose()"
+                                class="fa-solid fa-xmark"
+                            ></i>
                         </div>
                     </div>
                     <div class="nav-body">
@@ -103,7 +109,9 @@
                         <div class="menu-nav">
                             <ul class="row">
                                 <li class="menu-item">
-                                    <a href="#introduce">HOME</a>
+                                    <a class=".introduce" href="#introduce"
+                                        >HOME</a
+                                    >
                                     <ul class="sub-menu-nav">
                                         <li class="sub-menu-nav-item">
                                             <a href="">HOME ONE</a>
@@ -114,16 +122,18 @@
                                     </ul>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="#about">ABOUT US</a>
+                                    <a class=".about" href="#about">ABOUT US</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="#roadmap">ROAD MAP</a>
+                                    <a class=".roadmap" href="#roadmap"
+                                        >ROAD MAP</a
+                                    >
                                 </li>
                                 <li class="menu-item">
-                                    <a href="#faq">FAQ</a>
+                                    <a class=".faq" href="#faq">FAQ</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="#blog">BLOG</a>
+                                    <a class=".blog" href="#blog">BLOG</a>
                                     <ul class="sub-menu-nav">
                                         <li class="sub-menu-nav-item">
                                             <a href="">OUR BLOG</a>
@@ -134,7 +144,10 @@
                                     </ul>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="#contact" class="menu-item"
+                                    <a
+                                        class=".contact"
+                                        href="#contact"
+                                        class="menu-item"
                                         >CONTACT US</a
                                     >
                                 </li>
@@ -169,7 +182,7 @@
                                 <li class="menu-action-item nav-button">
                                     <button class="btn-blue">BUY NOW</button>
                                 </li>
-                                <li>
+                                <li onclick="handleClickMobileNavOpen()">
                                     <i class="fa-solid fa-bars"></i>
                                 </li>
                             </ul>
@@ -801,8 +814,7 @@
                             <textarea
                                 placeholder="Message"
                                 class="sending-message-massage"
-                            >
-                            </textarea>
+                            ></textarea>
                             <button class="btn-purple">SEND MESSAGE</button>
                         </div>
                     </div>
