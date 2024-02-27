@@ -20,9 +20,11 @@
 
     padding: 130px 0px;
     .about-img {
+        opacity: 0;
         padding: 0px 15px;
     }
     .about-content {
+        opacity: 0;
         margin-top: 40px;
         padding: 0px 15px;
         span {
@@ -89,6 +91,7 @@
         .container {
             position: relative;
             .shape1 {
+                display: none;
                 left: 0;
                 bottom: 0;
                 position: absolute;
@@ -173,14 +176,15 @@
         .container {
             position: relative;
             .shape1 {
+                display: none;
                 left: 0;
                 bottom: 0;
                 position: absolute;
             }
             .shape2 {
-                right: 0;
-                top: 0;
                 position: absolute;
+                right: 5%;
+                bottom: -8%;
             }
         }
 
@@ -223,7 +227,7 @@
                 font-family: Outfit;
                 grid-area: auto;
                 line-height: 28px;
-                margin: 0px 0px 20px;
+                margin: 20px 0px 20px;
             }
             ul {
                 li {
@@ -248,8 +252,9 @@
         }
         button {
             background-color: #564dca;
-            padding: 25px 42px;
+            padding: 20px 25px;
             margin-top: 40px;
+            font-size: 13px;
         }
         button:hover {
             background-color: #00c4f4;

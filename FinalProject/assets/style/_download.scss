@@ -1,6 +1,7 @@
 #download {
     padding: 150px 0px 140px;
     .download-content {
+        opacity: 0;
         padding-top: 52px;
         padding-right: 120px;
         span {
@@ -40,6 +41,7 @@
         }
     }
     .download-img {
+        opacity: 0;
         padding-left: 20px;
     }
 }

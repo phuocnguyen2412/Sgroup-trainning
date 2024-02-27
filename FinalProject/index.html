@@ -92,7 +92,7 @@
             </div>
         </nav>
         <header>
-            <nav>
+            <nav id="nav">
                 <div class="container">
                     <div class="row">
                         <div class="brand">
@@ -221,7 +221,29 @@
                     </div>
                 </div>
             </section>
-            <section id="coutdown"></section>
+            <section id="coutdown">
+                <div class="container grid">
+                    <h2>ICO Will Start In..</h2>
+                    <div class="clocks row">
+                        <div class="clock-item days l-3 m-4 c-6">
+                            <div class="days-coutdown coutdown"></div>
+                            <span>Hours</span>
+                        </div>
+                        <div class="clock-item hours l-3 m-4 c-6">
+                            <div class="hours-coutdown coutdown"></div>
+                            <span>Hours</span>
+                        </div>
+                        <div class="clock-item minutes l-3 m-4 c-6">
+                            <div class="minutes-coutdown coutdown"></div>
+                            <span>Minutes</span>
+                        </div>
+                        <div class="clock-item seconds l-3 m-4 c-6">
+                            <div class="seconds-coutdown coutdown"></div>
+                            <span>Seconds</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section id="about">
                 <div class="grid container">
                     <img
@@ -267,7 +289,7 @@
                     <h6 class="row">WHY CHOOSE US</h6>
                     <h2>Why You Choose Our <br />Bigtech Token</h2>
                     <div class="row">
-                        <div class="reason-item l-3 m-6 c-12">
+                        <div class="reason-item reason-item-1 l-3 m-6 c-12">
                             <img
                                 src="./assets/img/h2_choose_icon01.svg"
                                 alt=""
@@ -278,7 +300,7 @@
                                 collection.
                             </p>
                         </div>
-                        <div class="reason-item l-3 m-6 c-12">
+                        <div class="reason-item reason-item-2 l-3 m-6 c-12">
                             <img
                                 src="./assets/img/h2_choose_icon02.svg"
                                 alt=""
@@ -288,7 +310,7 @@
                                 collection.
                             </p>
                         </div>
-                        <div class="reason-item l-3 m-6 c-12">
+                        <div class="reason-item reason-item-3 l-3 m-6 c-12">
                             <img
                                 src="./assets/img/h2_choose_icon03.svg"
                                 alt=""
@@ -298,7 +320,7 @@
                                 collection.
                             </p>
                         </div>
-                        <div class="reason-item l-3 m-6 c-12">
+                        <div class="reason-item reason-item-4 l-3 m-6 c-12">
                             <img
                                 src="./assets/img/h2_choose_icon04.svg"
                                 alt=""
@@ -475,7 +497,7 @@
                         </h2>
                     </div>
                     <div class="out-team row">
-                        <div class="out-team-item l-3 m-6 c-12">
+                        <div class="out-team-item out-team-item-1 l-3 m-6 c-12">
                             <img src="./assets/img/h2_team_img01.png" alt="" />
                             <h2>Cameron Williamson</h2>
                             <p>Founder & CO</p>
@@ -502,7 +524,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="out-team-item l-3 m-6 c-12">
+                        <div class="out-team-item out-team-item-2 l-3 m-6 c-12">
                             <img src="./assets/img/h2_team_img02.png" alt="" />
                             <h2>Eleanor Pena</h2>
                             <p>Head of Design</p>
@@ -529,7 +551,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="out-team-item l-3 m-6 c-12">
+                        <div class="out-team-item out-team-item-3 l-3 m-6 c-12">
                             <img src="./assets/img/h2_team_img03.png" alt="" />
                             <h2>Bessie Cooper</h2>
                             <p>Vp People</p>
@@ -556,7 +578,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="out-team-item l-3 m-6 c-12">
+                        <div class="out-team-item out-team-item-4 l-3 m-6 c-12">
                             <img src="./assets/img/h2_team_img04.png" alt="" />
                             <h2>Darlene Robertson</h2>
                             <p>Product Manager</p>
@@ -622,11 +644,11 @@
                     <h2 class="title">Frequently Asked Questions</h2>
                     <div class="faq-content">
                         <div class="faq-item">
-                            <div class="question row">
+                            <div class="question faq-item-disabled row">
                                 <h3>Do I need to install any software?</h3>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </div>
-                            <p class="answer">
+                            <p class="answer answer-disabled">
                                 LessAccounting is 100% web-based, meaning it can
                                 be accessed from anywhere and there's no
                                 software to install on your computer. You can
@@ -638,11 +660,11 @@
                             </p>
                         </div>
                         <div class="faq-item">
-                            <div class="question row">
+                            <div class="question faq-item-disabled row">
                                 <h3>Is my data safe?</h3>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </div>
-                            <p class="answer">
+                            <p class="answer answer-disabled">
                                 LessAccounting is 100% web-based, meaning it can
                                 be accessed from anywhere and there's no
                                 software to install on your computer. You can
@@ -654,14 +676,14 @@
                             </p>
                         </div>
                         <div class="faq-item">
-                            <div class="question row">
+                            <div class="question faq-item-disabled row">
                                 <h3>
                                     How does the 30-day free software trial
                                     work?
                                 </h3>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </div>
-                            <p class="answer">
+                            <p class="answer answer-disabled">
                                 LessAccounting is 100% web-based, meaning it can
                                 be accessed from anywhere and there's no
                                 software to install on your computer. You can
@@ -673,14 +695,14 @@
                             </p>
                         </div>
                         <div class="faq-item">
-                            <div class="question row">
+                            <div class="question faq-item-disabled row">
                                 <h3>
                                     How does the 30-day free software trial
                                     work?
                                 </h3>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </div>
-                            <p class="answer">
+                            <p class="answer answer-disabled">
                                 LessAccounting is 100% web-based, meaning it can
                                 be accessed from anywhere and there's no
                                 software to install on your computer. You can
@@ -692,14 +714,14 @@
                             </p>
                         </div>
                         <div class="faq-item">
-                            <div class="question row">
+                            <div class="question faq-item-disabled row">
                                 <h3>
                                     How does the 30-day free software trial
                                     work?
                                 </h3>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </div>
-                            <p class="answer">
+                            <p class="answer answer-disabled">
                                 LessAccounting is 100% web-based, meaning it can
                                 be accessed from anywhere and there's no
                                 software to install on your computer. You can

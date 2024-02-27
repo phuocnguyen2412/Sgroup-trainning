@@ -16,6 +16,7 @@
         margin-bottom: 64px;
     }
     .faq-content {
+        opacity: 0;
         .faq-item {
             cursor: pointer;
             margin-bottom: 24px;
@@ -24,7 +25,7 @@
                 align-items: center;
                 background-color: #ffffff;
                 border-radius: 100px;
-                transition: all 0.3 linear;
+                transition: all 0.3 ease-in-out;
                 h3 {
                     color: #212529;
 
@@ -54,13 +55,21 @@
                 font-size: 18px;
                 grid-area: auto;
                 border-bottom: 4px solid #00c4f4;
+                overflow: hidden;
             }
             .answer-active {
-                display: block !important;
+                animation: fadeDown 0.3s ease-in-out;
+                display: block;
+                animation-fill-mode: forwards;
             }
+            // .answer-disabled {
+            //     display: block;
+            //     animation: fadeUp 0.3 ease-in-out;
+            //     animation-fill-mode: forwards;
+            // }
         }
         .faq-item-active {
-            border-radius: 0px !important;
+            animation: fadeBorder 0.3s ease-in-out;
         }
     }
     .img2 {
@@ -79,6 +88,23 @@
 }
 .faq-item-active {
     border-radius: 0px !important;
+}
+@media screen and (min-width: 740px) and (max-width: 1239px) {
+    #faq {
+        .img2 {
+            position: absolute;
+
+            right: 4%;
+            top: 8%;
+            animation: rolate360 10s linear infinite;
+        }
+        .img1 {
+            position: absolute;
+            bottom: 60px;
+            left: 3%;
+            animation: di_chuyen_ngang 5s linear infinite;
+        }
+    }
 }
 @media screen and (max-width: 739px) {
     #faq {
@@ -131,7 +157,7 @@
         }
         .img2 {
             position: absolute;
-
+            display: none;
             top: 172px;
             right: 152px;
             animation-name: rolate360;
@@ -142,6 +168,7 @@
             position: absolute;
             bottom: 214px;
             left: 10%;
+            display: none;
         }
     }
 }

@@ -102,12 +102,20 @@
     }
 }
 header {
-    nav {
+    .nav-sticky {
+        background: #030b15;
         position: fixed;
         top: 0;
-        width: 100%;
         right: 0;
         z-index: 100;
+        padding: 0;
+    }
+    nav {
+        width: 100%;
+        position: absolute;
+        z-index: 1000;
+        top: 0;
+        right: 0;
         font-family: "Outfit", sans-serif;
         background-color: transparent;
         padding: 40px 0;
@@ -129,6 +137,9 @@ header {
                             color: #ffffff;
                             font-weight: 600;
                             letter-spacing: 1px;
+                        }
+                        .meunu-item-active {
+                            color: #00c4f4;
                         }
                         .sub-menu-nav {
                             transform: perspective(400px) rotateX(-45deg);
@@ -295,31 +306,48 @@ header {
     }
 }
 @media screen and (max-width: 739px) {
-    #download .container > .row {
-        justify-content: center;
-        flex-direction: column-reverse;
-    }
-    #download {
-        padding: 150px 0px 140px;
-        .row {
-            .download-content {
-                margin-top: 56px;
-                padding: 0;
-                h2 {
-                    font-size: 24px;
-                }
-                .download-link {
-                    a {
-                        margin: 0 6px;
+    header {
+        nav {
+            padding: 15px 0;
+            .container {
+                max-width: 360px;
+                .row {
+                    line-height: normal;
+                    .brand {
+                        a {
+                            img {
+                                max-height: 65px;
+                            }
+                        }
                     }
-                }
-            }
-            .download-img {
-                padding: 0;
-                display: flex;
-                justify-content: center;
-                img {
-                    width: 100%;
+                    .menu-nav {
+                        display: none;
+                    }
+
+                    .menu-action {
+                        .pc-menu-action {
+                            display: none;
+                        }
+                        .tablet-menu-action {
+                            display: flex;
+                            .nav-button {
+                                &::before {
+                                    display: none;
+                                }
+                            }
+                            li {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                i {
+                                    margin-left: 36px;
+                                    color: white;
+                                    font-size: 30px;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

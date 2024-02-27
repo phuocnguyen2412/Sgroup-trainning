@@ -1,3 +1,4 @@
+@import "./animation";
 .introduce {
     background-image: url("../img/banner_bg02.jpg");
     background-size: cover;
@@ -33,6 +34,8 @@
             line-height: 74.8px;
             margin: 0px 0px 65px;
             text-align: center;
+            animation: fadeDown 1s ease-in-out;
+            animation-fill-mode: forwards;
         }
         img {
             display: block;

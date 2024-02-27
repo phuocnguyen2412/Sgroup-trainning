@@ -1,0 +1,47 @@
+#coutdown {
+    margin-top: 180px;
+    .container {
+        background-color: #ffffff;
+        border-radius: 20px;
+        box-shadow: #a0abbf 0px 34px 35px 0px;
+        color: #a4b4c3;
+        grid-area: auto;
+        line-height: 28px;
+        padding: 55px 50px 60px;
+        text-align: center;
+        h2 {
+            color: #030b15;
+            font-family: Poppins;
+            font-size: 26px;
+            font-weight: 600;
+            grid-area: auto;
+            letter-spacing: -0.26px;
+            line-height: 48.88px;
+            margin: 0px 0px 35px;
+            text-align: center;
+        }
+        .clocks {
+            justify-content: center;
+            .clock-item {
+                padding: 0 32px;
+                .coutdown {
+                    color: #030b15;
+                    font-size: 35px;
+                    font-weight: 600;
+                    grid-area: auto;
+                    line-height: 35px;
+
+                    text-align: center;
+                }
+                span {
+                    color: #030b15;
+                    font-size: 14px;
+                    font-weight: 500;
+                    grid-area: auto;
+                    line-height: 14px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
