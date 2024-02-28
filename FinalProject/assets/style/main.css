@@ -229,8 +229,14 @@ footer .container .scoll-top span {
 }
 
 .fadeDown {
-  animation: fadeDown 1s ease-in-out;
-  animation-fill-mode: forwards;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+}
+
+.fadeDown.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .fadeUpDelay1 {
@@ -612,8 +618,14 @@ footer .container .scoll-top span {
 }
 
 .fadeDown {
-  animation: fadeDown 1s ease-in-out;
-  animation-fill-mode: forwards;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+}
+
+.fadeDown.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .fadeUpDelay1 {
@@ -1209,6 +1221,7 @@ header nav .container .row .menu-action .nav-button button {
     padding: 130px 0 250px;
   }
   #contact .contact-info {
+    opacity: 1;
     margin-bottom: 60px;
   }
   #contact .contact-info h2 {
@@ -1244,6 +1257,7 @@ header nav .container .row .menu-action .nav-button button {
     line-height: 21.9px;
   }
   #contact .sending-message {
+    opacity: 1;
     padding: 0px;
   }
   #contact .sending-message h3 {
@@ -1348,10 +1362,12 @@ header nav .container .row .menu-action .nav-button button {
     padding: 150px 0px 140px;
   }
   #download .row .download-content {
+    opacity: 1;
     margin-top: 56px;
     padding: 0 24px;
   }
   #download .row .download-img {
+    opacity: 1;
     padding: 0;
     display: flex;
     justify-content: center;
@@ -1369,6 +1385,7 @@ header nav .container .row .menu-action .nav-button button {
     padding: 150px 0px 140px;
   }
   #download .row .download-content {
+    opacity: 1;
     margin-top: 56px;
     padding: 0;
   }
@@ -1379,6 +1396,7 @@ header nav .container .row .menu-action .nav-button button {
     margin: 0 6px;
   }
   #download .row .download-img {
+    opacity: 1;
     padding: 0;
     display: flex;
     justify-content: center;
@@ -1506,6 +1524,7 @@ header nav .container .row .menu-action .nav-button button {
     justify-content: center;
   }
   #out-team .out-team .out-team-item {
+    opacity: 1;
     padding-bottom: 40px;
   }
   #out-team .out-team .out-team-item img {
@@ -1548,6 +1567,9 @@ header nav .container .row .menu-action .nav-button button {
   }
 }
 @media screen and (max-width: 739px) {
+  #out-team .out-team .out-team-item {
+    opacity: 1;
+  }
   #download .container > .row {
     justify-content: center;
     flex-direction: column-reverse;
@@ -1649,8 +1671,14 @@ header nav .container .row .menu-action .nav-button button {
 }
 
 .fadeDown {
-  animation: fadeDown 1s ease-in-out;
-  animation-fill-mode: forwards;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+}
+
+.fadeDown.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .fadeUpDelay1 {
@@ -1794,9 +1822,11 @@ header nav .container .row .menu-action .nav-button button {
     position: absolute;
   }
   #about .about-img {
+    opacity: 1;
     padding: 0px 15px;
   }
   #about .about-content {
+    opacity: 1;
     margin-top: 40px;
     padding: 0px 15px;
   }
@@ -1875,6 +1905,7 @@ header nav .container .row .menu-action .nav-button button {
     bottom: -8%;
   }
   #about .about-img {
+    opacity: 1;
     padding: 0px 15px;
   }
   #about .about-img img {
@@ -1883,6 +1914,7 @@ header nav .container .row .menu-action .nav-button button {
     width: 100%;
   }
   #about .about-content {
+    opacity: 1;
     margin-top: 40px;
     padding: 0px 15px;
   }
@@ -2100,6 +2132,7 @@ header nav .container .row .menu-action .nav-button button {
     margin-bottom: 62px;
   }
   #reason .reason-item {
+    opacity: 1;
     padding-right: 32px;
     padding-bottom: 32px;
   }
@@ -2194,6 +2227,7 @@ header nav .container .row .menu-action .nav-button button {
     margin-bottom: 62px;
   }
   #reason .reason-item {
+    opacity: 1;
     padding: 0 20px;
     display: flex;
     flex-direction: column;
@@ -2347,8 +2381,14 @@ header nav .container .row .menu-action .nav-button button {
 }
 
 .fadeDown {
-  animation: fadeDown 1s ease-in-out;
-  animation-fill-mode: forwards;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+}
+
+.fadeDown.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .fadeUpDelay1 {
@@ -2437,6 +2477,10 @@ header nav .container .row .menu-action .nav-button button {
   transform: rotate(90deg);
   color: #132047;
   opacity: 0.3;
+  transition: all 0.2s ease-in-out;
+}
+#faq .faq-content .faq-item .question .arrow-active {
+  transform: rotate(-90deg);
 }
 #faq .faq-content .faq-item .answer {
   display: none;
@@ -2476,6 +2520,9 @@ header nav .container .row .menu-action .nav-button button {
 }
 
 @media screen and (min-width: 740px) and (max-width: 1239px) {
+  #faq .faq-content {
+    opacity: 1;
+  }
   #faq .img2 {
     position: absolute;
     right: 4%;
@@ -2497,6 +2544,9 @@ header nav .container .row .menu-action .nav-button button {
   }
   #faq h2 {
     font-size: 24px;
+  }
+  #faq .faq-content {
+    opacity: 1;
   }
   #faq .faq-content .faq-item {
     cursor: pointer;
@@ -2985,8 +3035,14 @@ header nav .container .row .menu-action .nav-button button {
 }
 
 .fadeDown {
-  animation: fadeDown 1s ease-in-out;
-  animation-fill-mode: forwards;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+}
+
+.fadeDown.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .fadeUpDelay1 {

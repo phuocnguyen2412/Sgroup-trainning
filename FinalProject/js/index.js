@@ -3,8 +3,9 @@ const $ = document.querySelector.bind(document);
 
 $$(".faq-item").forEach((block) => {
     block.addEventListener("click", (e) => {
+        console.log(block.childNodes[1].childNodes[3]);
         block.childNodes[1].classList.toggle("faq-item-active");
-
+        block.childNodes[1].childNodes[3].classList.toggle("arrow-active");
         block.childNodes[1].classList.toggle("faq-item-disabled");
 
         block.childNodes[3].classList.toggle("answer-active");
@@ -63,21 +64,21 @@ window.addEventListener("scroll", function () {
     const about_content = $(".about-content");
     const scrollPosition = window.scrollY;
 
-    if (scrollPosition - 400 > about.offsetTop - window.innerHeight) {
+    if (
+        window.innerWidth > 1239 &&
+        scrollPosition - 400 > about.offsetTop - window.innerHeight
+    ) {
         about_content.classList.add("fadeRightToLeft");
         about_img.classList.add("fadeLeftToRight");
     }
     //----------------------------------------------------------------
     //Nav//
-    if (
-        window.innerWidth > 1239 &&
-        scrollPosition > about.offsetTop - window.innerHeight
-    ) {
+    if (scrollPosition > about.offsetTop - window.innerHeight) {
         $("#nav").classList.add("nav-sticky");
-        $("#nav").classList.add("fadeDown");
+        $("#nav").classList.add("active");
     } else {
         $("#nav").classList.remove("nav-sticky");
-        $("#nav").classList.remove("fadeDown");
+        $("#nav").classList.remove("active");
     }
     //----------------------------------------------------------------
     // Reason //
@@ -136,7 +137,10 @@ window.addEventListener("scroll", function () {
         faq_content.classList.add("fadeUp");
     }
     // Contact //
-    if (scrollPosition - 400 > $("#contact").offsetTop - window.innerHeight) {
+    if (
+        window.innerWidth > 1239 &&
+        scrollPosition - 400 > $("#contact").offsetTop - window.innerHeight
+    ) {
         $(".contact-info").classList.add("fadeLeftToRight");
         $(".sending-message").classList.add("fadeRightToLeft");
     }

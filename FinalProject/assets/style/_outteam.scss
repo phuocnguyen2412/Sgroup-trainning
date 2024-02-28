@@ -120,6 +120,7 @@
         .out-team {
             justify-content: center;
             .out-team-item {
+                opacity: 1;
                 padding-bottom: 40px;
                 img {
                     display: block;
@@ -164,6 +165,13 @@
     }
 }
 @media screen and (max-width: 739px) {
+    #out-team {
+        .out-team {
+            .out-team-item {
+                opacity: 1;
+            }
+        }
+    }
     #download .container > .row {
         justify-content: center;
         flex-direction: column-reverse;
