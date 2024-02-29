@@ -76,20 +76,20 @@
     animation: fadeUp 1s ease-in-out;
     animation-fill-mode: forwards;
 }
-// .fadeDown {
-//     animation: fadeDown 1s ease-in-out;
-//     animation-fill-mode: forwards;
-// }
 .fadeDown {
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: all 0.3s ease;
+    animation: fadeDown 1s ease-in-out;
+    animation-fill-mode: forwards;
 }
+// .fadeDown {
+//     opacity: 0;
+//     transform: translateY(-20px);
+//     transition: all 0.3s ease;
+// }
 
-.fadeDown.active {
-    opacity: 1;
-    transform: translateY(0);
-}
+// .fadeDown.active {
+//     opacity: 1;
+//     transform: translateY(0);
+// }
 .fadeUpDelay1 {
     animation: fadeUp 1s ease-in-out;
     animation-fill-mode: forwards;

@@ -229,14 +229,8 @@ footer .container .scoll-top span {
 }
 
 .fadeDown {
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: all 0.3s ease;
-}
-
-.fadeDown.active {
-  opacity: 1;
-  transform: translateY(0);
+  animation: fadeDown 1s ease-in-out;
+  animation-fill-mode: forwards;
 }
 
 .fadeUpDelay1 {
@@ -618,14 +612,8 @@ footer .container .scoll-top span {
 }
 
 .fadeDown {
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: all 0.3s ease;
-}
-
-.fadeDown.active {
-  opacity: 1;
-  transform: translateY(0);
+  animation: fadeDown 1s ease-in-out;
+  animation-fill-mode: forwards;
 }
 
 .fadeUpDelay1 {
@@ -929,8 +917,13 @@ header nav .container .row .menu-action .nav-button button {
 }
 
 @media screen and (min-width: 740px) and (max-width: 1239px) {
-  header nav {
-    padding: 15px 0;
+  header .nav-sticky {
+    background: #030b15;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    padding: 10px 0;
   }
   header nav .container {
     width: 720px;
@@ -986,6 +979,9 @@ header nav .container .row .menu-action .nav-button button {
   }
   header nav .container .row .menu-action .tablet-menu-action {
     display: flex;
+  }
+  header nav .container .row .menu-action .tablet-menu-action .nav-button {
+    display: none;
   }
   header nav .container .row .menu-action .tablet-menu-action .nav-button::before {
     display: none;
@@ -1671,14 +1667,8 @@ header nav .container .row .menu-action .nav-button button {
 }
 
 .fadeDown {
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: all 0.3s ease;
-}
-
-.fadeDown.active {
-  opacity: 1;
-  transform: translateY(0);
+  animation: fadeDown 1s ease-in-out;
+  animation-fill-mode: forwards;
 }
 
 .fadeUpDelay1 {
@@ -2381,14 +2371,8 @@ header nav .container .row .menu-action .nav-button button {
 }
 
 .fadeDown {
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: all 0.3s ease;
-}
-
-.fadeDown.active {
-  opacity: 1;
-  transform: translateY(0);
+  animation: fadeDown 1s ease-in-out;
+  animation-fill-mode: forwards;
 }
 
 .fadeUpDelay1 {
@@ -3035,14 +3019,8 @@ header nav .container .row .menu-action .nav-button button {
 }
 
 .fadeDown {
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: all 0.3s ease;
-}
-
-.fadeDown.active {
-  opacity: 1;
-  transform: translateY(0);
+  animation: fadeDown 1s ease-in-out;
+  animation-fill-mode: forwards;
 }
 
 .fadeUpDelay1 {

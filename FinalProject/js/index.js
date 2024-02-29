@@ -98,6 +98,25 @@ window.addEventListener("scroll", function () {
         reason_item_4.classList.add("fadeUpDelay4");
     }
     //----------------------------------------------------------------
+    // Archieved //
+
+    const valueDisplays = $$(".archieved-number");
+    const interval = 1000;
+    if (scrollPosition - 400 > $("#archives").offsetTop - window.innerHeight) {
+        valueDisplays.forEach((valueDisplay) => {
+            let startValue = 0;
+            const endValue = valueDisplay.getAttribute("value");
+
+            const loot = setInterval(() => {
+                startValue += 1;
+                valueDisplay.innerHTML = startValue + "K";
+                if (startValue == endValue) {
+                    clearInterval(loot);
+                }
+            }, interval / endValue);
+        });
+    }
+    //----------------------------------------------------------------
     // Out Team //
     const out_team = $("#out-team");
     const out_team_item_1 = $(".out-team-item-1");
