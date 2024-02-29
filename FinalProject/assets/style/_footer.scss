@@ -18,6 +18,10 @@ footer {
                         line-height: 24px;
                         color: #0a142f;
                         opacity: 0.3;
+                        transition: all 0.25s ease-in-out;
+                        &:hover {
+                            color: #00c4f4;
+                        }
                     }
                 }
             }

@@ -19,6 +19,10 @@ footer .container .container-top .icons .row i {
   line-height: 24px;
   color: #0a142f;
   opacity: 0.3;
+  transition: all 0.25s ease-in-out;
+}
+footer .container .container-top .icons .row i:hover {
+  color: #00c4f4;
 }
 footer .container .container-bottom {
   border-color: #f0f3f9;
@@ -458,7 +462,7 @@ footer .container .scoll-top span {
     position: relative;
     z-index: -2;
     position: relative;
-    height: 820px;
+    height: 500px;
   }
   .introduce::after {
     content: "";
@@ -475,7 +479,7 @@ footer .container .scoll-top span {
   }
   .introduce .content {
     max-width: 360px;
-    padding-top: 248px;
+    padding-top: 140px;
     align-items: center;
     margin: 0 auto;
   }
@@ -805,7 +809,7 @@ header nav .container .row .menu-nav .menu-item a {
   font-weight: 600;
   letter-spacing: 1px;
 }
-header nav .container .row .menu-nav .menu-item .meunu-item-active {
+header nav .container .row .menu-nav .menu-item a.active {
   color: #00c4f4;
 }
 header nav .container .row .menu-nav .menu-item .sub-menu-nav {
@@ -2437,13 +2441,14 @@ header nav .container .row .menu-action .nav-button button {
 #faq .faq-content .faq-item {
   cursor: pointer;
   margin-bottom: 24px;
+  position: relative;
 }
 #faq .faq-content .faq-item .question {
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
   border-radius: 100px;
-  transition: all 0.3 ease-in-out;
+  transition: all 0.2s ease-in-out;
   padding: 37px 55px 37px 55px;
   text-align: left;
 }
@@ -2463,33 +2468,34 @@ header nav .container .row .menu-action .nav-button button {
   opacity: 0.3;
   transition: all 0.2s ease-in-out;
 }
-#faq .faq-content .faq-item .question .arrow-active {
-  transform: rotate(-90deg);
-}
 #faq .faq-content .faq-item .answer {
-  display: none;
+  position: relative;
   background-color: #ffffff;
-  line-height: 28px;
+  overflow: hidden;
+  transition: height 0.2s ease-in-out;
+  height: 0;
+}
+#faq .faq-content .faq-item .answer .inner {
   padding: 0px 40px 45px 55px;
+  position: absolute;
+  line-height: 28px;
   color: #727885;
   font-family: Outfit;
   font-size: 18px;
-  grid-area: auto;
   border-bottom: 4px solid #00c4f4;
-  overflow: hidden;
 }
-#faq .faq-content .faq-item .answer-active {
-  animation: fadeDown 0.3s ease-in-out;
-  display: block;
-  animation-fill-mode: forwards;
+#faq .faq-content .faq-item.active .question {
+  border-radius: 0;
 }
-#faq .faq-content .faq-item-active {
-  animation: fadeBorder 0.3s ease-in-out;
+#faq .faq-content .faq-item.active i {
+  transform: rotate(-90deg);
 }
 #faq .img2 {
   position: absolute;
-  top: 172px;
-  right: 152px;
+  width: 80px;
+  height: auto;
+  top: 100px;
+  right: 100px;
   animation: rolate360 10s linear infinite;
 }
 #faq .img1 {
@@ -2497,10 +2503,6 @@ header nav .container .row .menu-action .nav-button button {
   bottom: 60px;
   left: 10%;
   animation: di_chuyen_ngang 5s linear infinite;
-}
-
-.faq-item-active {
-  border-radius: 0px !important;
 }
 
 @media screen and (min-width: 740px) and (max-width: 1239px) {
@@ -2561,8 +2563,10 @@ header nav .container .row .menu-action .nav-button button {
   }
   #faq .faq-content .faq-item .answer {
     background-color: #ffffff;
-    line-height: 28px;
+  }
+  #faq .faq-content .faq-item .answer .inner {
     padding: 0 25px 40px 25px;
+    line-height: 28px;
     color: #727885;
     font-family: Outfit;
     font-size: 18px;
@@ -2572,8 +2576,6 @@ header nav .container .row .menu-action .nav-button button {
   #faq .img2 {
     position: absolute;
     display: none;
-    top: 172px;
-    right: 152px;
     animation-name: rolate360;
     animation-duration: infinite;
     animation-timing-function: linear;
@@ -2925,7 +2927,28 @@ header nav .container .row .menu-action .nav-button button {
   justify-content: center;
 }
 #coutdown .container .clocks .clock-item {
-  padding: 0 32px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#coutdown .container .clocks .clock-item .outer {
+  background-color: rgba(160, 171, 191, 0.21);
+  border-radius: 50%;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#coutdown .container .clocks .clock-item .inner {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 #coutdown .container .clocks .clock-item .coutdown {
   color: #030b15;
@@ -2936,6 +2959,7 @@ header nav .container .row .menu-action .nav-button button {
   text-align: center;
 }
 #coutdown .container .clocks .clock-item span {
+  margin-top: 4px;
   color: #030b15;
   font-size: 14px;
   font-weight: 500;
@@ -2944,6 +2968,76 @@ header nav .container .row .menu-action .nav-button button {
   text-align: center;
 }
 
+@media screen and (max-width: 739px) {
+  #coutdown {
+    margin-top: 40px;
+  }
+  #coutdown .container {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: #a0abbf 0px 34px 35px 0px;
+    color: #a4b4c3;
+    grid-area: auto;
+    line-height: 28px;
+    padding: 55px 50px 60px;
+    text-align: center;
+  }
+  #coutdown .container h2 {
+    color: #030b15;
+    font-family: Poppins;
+    font-size: 26px;
+    font-weight: 600;
+    grid-area: auto;
+    letter-spacing: -0.26px;
+    line-height: 48.88px;
+    margin: 0px 0px 35px;
+    text-align: center;
+  }
+  #coutdown .container .clocks {
+    justify-content: center;
+  }
+  #coutdown .container .clocks .clock-item {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #coutdown .container .clocks .clock-item .outer {
+    background-color: rgba(160, 171, 191, 0.21);
+    border-radius: 50%;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #coutdown .container .clocks .clock-item .inner {
+    background-color: #fff;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #coutdown .container .clocks .clock-item .coutdown {
+    color: #030b15;
+    font-size: 35px;
+    font-weight: 600;
+    grid-area: auto;
+    line-height: 35px;
+    text-align: center;
+  }
+  #coutdown .container .clocks .clock-item span {
+    margin-top: 4px;
+    color: #030b15;
+    font-size: 14px;
+    font-weight: 500;
+    grid-area: auto;
+    line-height: 14px;
+    text-align: center;
+  }
+}
 @keyframes rolate360 {
   0% {
     transform: rotate(0deg);
@@ -3062,6 +3156,59 @@ header nav .container .row .menu-action .nav-button button {
     border-radius: 0;
   }
 }
+#preloader {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #030b15;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+#preloader .spinner {
+  position: relative;
+  z-index: 1000000000;
+  margin: 100px auto;
+  width: 50px;
+  height: 40px;
+  text-align: center;
+}
+#preloader .spinner div {
+  background-color: #00c2f2;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+  animation: loading 1.2s infinite ease-in-out;
+}
+#preloader .spinner .rect5 {
+  animation-delay: 0.5s;
+}
+#preloader .spinner .rect4 {
+  animation-delay: 0.4s;
+}
+#preloader .spinner .rect3 {
+  animation-delay: 0.3s;
+}
+#preloader .spinner .rect2 {
+  animation-delay: 0.2s;
+}
+#preloader .spinner .rect1 {
+  animation-delay: 0.1s;
+}
+
+@keyframes loading {
+  0%, 40%, 100% {
+    transform: scaleY(0.4);
+  }
+  20% {
+    transform: scaleY(1);
+  }
+}
 * {
   padding: 0;
   margin: 0;
@@ -3112,6 +3259,10 @@ button {
 a {
   color: #030b15;
   text-decoration: none;
+  transition: all 0.25s ease-in-out;
+}
+a:hover {
+  color: #00c4f4;
 }
 
 body {

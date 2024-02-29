@@ -1,18 +1,47 @@
 const $$ = document.querySelectorAll.bind(document);
 const $ = document.querySelector.bind(document);
+setTimeout(() => {
+    $("#preloader").style.display = "none";
+}, 2000);
 
 $$(".faq-item").forEach((block) => {
     block.addEventListener("click", (e) => {
-        console.log(block.childNodes[1].childNodes[3]);
-        block.childNodes[1].classList.toggle("faq-item-active");
-        block.childNodes[1].childNodes[3].classList.toggle("arrow-active");
-        block.childNodes[1].classList.toggle("faq-item-disabled");
-
-        block.childNodes[3].classList.toggle("answer-active");
-
-        block.childNodes[3].classList.toggle("answer-disabled");
+        $$(".faq-item").forEach((block) => {
+            block.classList.remove("active");
+            const isActive = block.classList.contains("active");
+            const answer = block.querySelector(".answer");
+            answer.style.height = `${
+                isActive ? answer.querySelector(".inner").clientHeight + 4 : 0
+            }px`;
+        });
+        block.classList.toggle("active");
+        const isActive = block.classList.contains("active");
+        const answer = block.querySelector(".answer");
+        answer.style.height = `${
+            isActive ? answer.querySelector(".inner").clientHeight + 4 : 0
+        }px`;
     });
 });
+
+///////// countdown //////////////////////////////////
+function setProcessClock(clock, currentValue, color) {
+    const circle = clock.querySelector(".outer");
+    const maxValue = circle.getAttribute("max-value");
+
+    let current = 0;
+    if (currentValue == 0) {
+        current = 360;
+    } else {
+        current = Math.floor(360 - (currentValue * 360) / maxValue);
+    }
+    console.log();
+    circle.style.background = `conic-gradient(
+        ${color} ${current}deg,
+        rgb(237, 237, 237) 0deg
+    )`;
+}
+
+////////////////////////////////////////////////////////////////
 
 document.addEventListener("DOMContentLoaded", function () {
     const daysElement = $(".days-coutdown");
@@ -20,26 +49,30 @@ document.addEventListener("DOMContentLoaded", function () {
     const minutesElement = $(".minutes-coutdown");
     const secondsElement = $(".seconds-coutdown");
 
-    // Set the target date for the countdown
-    const targetDate = new Date("2024-12-31T23:59:59");
-
+    let timeDifference = ((49 * 24 + 8) * 60 + 36) * 60 * 1000;
     function updateCountdown() {
-        const currentDate = new Date();
-        const timeDifference = targetDate - currentDate;
+        const clocks = $$(".clock-item");
 
         const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
         const hours = Math.floor(
             (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
         );
+
         const minutes = Math.floor(
             (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
         );
-        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
+        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+        setProcessClock($(".days"), days, "#00c4f4");
+        setProcessClock($(".hours"), hours, "#ff9700");
+        setProcessClock($(".minutes"), minutes, "#ff4581");
+        setProcessClock($(".seconds"), seconds, "#14d176");
         daysElement.innerHTML = days;
         hoursElement.innerHTML = hours;
         minutesElement.innerHTML = minutes;
         secondsElement.innerHTML = seconds;
+        timeDifference = timeDifference - 1000;
     }
 
     // Initial call to update the countdown
@@ -57,7 +90,25 @@ function handleClickMobileNavOpen() {
 
     $(".tablet-moblie-nav").classList.add("tablet-moblie-nav-active");
 }
+let hasRun = false;
+
+function activeNavItem(NavItem, section) {
+    const scrollPosition = window.scrollY;
+
+    if (
+        scrollPosition + 200 > section.offsetTop &&
+        scrollPosition - 200 < section.offsetTop + section.offsetHeight
+    ) {
+        NavItem.classList.add("active");
+    } else {
+        NavItem.classList.remove("active");
+    }
+}
 window.addEventListener("scroll", function () {
+    ////  Introduction
+
+    /////--------------------------------------------------------
+
     // About //
     const about = $("#about");
     const about_img = $(".about-img");
@@ -73,13 +124,19 @@ window.addEventListener("scroll", function () {
     }
     //----------------------------------------------------------------
     //Nav//
-    if (scrollPosition > about.offsetTop - window.innerHeight) {
+    if (scrollPosition > $("#coutdown").offsetTop - window.innerHeight) {
         $("#nav").classList.add("nav-sticky");
-        $("#nav").classList.add("active");
+        $("#nav").classList.add("fadeDown");
     } else {
         $("#nav").classList.remove("nav-sticky");
-        $("#nav").classList.remove("active");
+        $("#nav").classList.remove("fadeDown");
     }
+    activeNavItem($(".home"), $("#introduce"));
+    activeNavItem($(".about"), $("#about"));
+    activeNavItem($(".roadmap"), $("#roadmap"));
+    activeNavItem($(".faq"), $("#faq"));
+    activeNavItem($(".contact"), $("#contact"));
+
     //----------------------------------------------------------------
     // Reason //
     const reason = $("#reason");
@@ -101,8 +158,11 @@ window.addEventListener("scroll", function () {
     // Archieved //
 
     const valueDisplays = $$(".archieved-number");
-    const interval = 1000;
-    if (scrollPosition - 400 > $("#archives").offsetTop - window.innerHeight) {
+    const interval = 2000;
+    if (
+        !hasRun &&
+        scrollPosition - 200 > $("#archives").offsetTop - window.innerHeight
+    ) {
         valueDisplays.forEach((valueDisplay) => {
             let startValue = 0;
             const endValue = valueDisplay.getAttribute("value");
@@ -113,8 +173,9 @@ window.addEventListener("scroll", function () {
                 if (startValue == endValue) {
                     clearInterval(loot);
                 }
-            }, interval / endValue);
+            }, endValue / interval);
         });
+        hasRun = true;
     }
     //----------------------------------------------------------------
     // Out Team //
@@ -132,6 +193,9 @@ window.addEventListener("scroll", function () {
         out_team_item_3.classList.add("fadeUpDelay3");
         out_team_item_4.classList.add("fadeUpDelay4");
     }
+    //// RoadMao ////
+
+    ////----------------------------------------------------------------
     //----------------------------------------------------------------
     // Download //
     const download = $("#download");
@@ -149,6 +213,7 @@ window.addEventListener("scroll", function () {
     // Faq //
     const faq = $("#faq");
     const faq_content = $(".faq-content");
+
     if (
         window.innerWidth > 1239 &&
         scrollPosition - 400 > faq.offsetTop - window.innerHeight

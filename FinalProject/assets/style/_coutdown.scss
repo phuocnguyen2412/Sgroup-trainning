@@ -23,23 +23,119 @@
         .clocks {
             justify-content: center;
             .clock-item {
-                padding: 0 32px;
+                margin-bottom: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .outer {
+                    background-color: rgba(160, 171, 191, 0.21);
+                    border-radius: 50%;
+
+                    padding: 6px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .inner {
+                    background-color: #fff;
+                    border-radius: 50%;
+                    width: 120px;
+                    height: 120px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
                 .coutdown {
                     color: #030b15;
                     font-size: 35px;
                     font-weight: 600;
                     grid-area: auto;
                     line-height: 35px;
-
                     text-align: center;
                 }
                 span {
+                    margin-top: 4px;
                     color: #030b15;
                     font-size: 14px;
                     font-weight: 500;
                     grid-area: auto;
                     line-height: 14px;
                     text-align: center;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 739px) {
+    #coutdown {
+        margin-top: 40px;
+        .container {
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: #a0abbf 0px 34px 35px 0px;
+            color: #a4b4c3;
+            grid-area: auto;
+            line-height: 28px;
+            padding: 55px 50px 60px;
+            text-align: center;
+            h2 {
+                color: #030b15;
+                font-family: Poppins;
+                font-size: 26px;
+                font-weight: 600;
+                grid-area: auto;
+                letter-spacing: -0.26px;
+                line-height: 48.88px;
+                margin: 0px 0px 35px;
+                text-align: center;
+            }
+            .clocks {
+                justify-content: center;
+                .clock-item {
+                    margin-bottom: 30px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .outer {
+                        background-color: rgba(160, 171, 191, 0.21);
+                        border-radius: 50%;
+
+                        padding: 6px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    .inner {
+                        background-color: #fff;
+                        border-radius: 50%;
+
+                        width: 100px;
+                        height: 100px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    .coutdown {
+                        color: #030b15;
+                        font-size: 35px;
+                        font-weight: 600;
+                        grid-area: auto;
+                        line-height: 35px;
+                        text-align: center;
+                    }
+                    span {
+                        margin-top: 4px;
+                        color: #030b15;
+                        font-size: 14px;
+                        font-weight: 500;
+                        grid-area: auto;
+                        line-height: 14px;
+                        text-align: center;
+                    }
                 }
             }
         }

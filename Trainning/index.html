@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .countdown-area-two .countdown-wrap {
+                background: #ffffff;
+                box-shadow: 0px 34px 35px rgba(160, 171, 191, 0.21);
+                border-radius: 20px;
+                position: relative;
+                text-align: center;
+                padding: 55px 50px 60px;
+            }
+            .countdown-area-two .countdown-wrap::before {
+                content: "";
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80%;
+                height: 80%;
+                background: #00c4f4;
+                opacity: 0.08;
+                border-radius: 20px;
+                z-index: -1;
+            }
+            .countdown-area-two .countdown-wrap .title {
+                color: #030b15;
+                letter-spacing: -0.01em;
+                font-size: 26px;
+                margin-bottom: 35px;
+                line-height: 1.88;
+            }
+            .ClassyCountdown-wrapper {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-bottom: 0;
+                column-gap: 115px;
+                row-gap: 30px;
+            }
+            .ClassyCountdown-wrapper > div > div:not(:last-child) {
+                display: block !important;
+            }
+            .ClassyCountdown-wrapper > div > div canvas {
+                display: block;
+                width: 100% !important;
+                height: 100% !important;
+            }
+            .ClassyCountdown-value {
+                display: block;
+                line-height: 0;
+            }
+            .ClassyCountdown-value > div {
+                display: block;
+                text-align: center;
+                line-height: 1;
+                margin-bottom: 5px;
+                font-size: 35px;
+                font-weight: 600;
+                color: #030b15;
+                font-family: "Poppins", sans-serif;
+                margin-top: -95px;
+            }
+            .ClassyCountdown-value > span {
+                font-size: 14px;
+                display: block;
+                text-align: center;
+                font-family: "Outfit";
+                color: #030b15;
+                font-weight: 500;
+                line-height: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <section id="countdown" class="countdown-area-two">
+            <div class="container custom-container-four">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="countdown-wrap">
+                            <h2 class="title">ICO Will Start In..</h2>
+                            <div id="countdown-gampang"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            const $$ = document.querySelectorAll.bind(document);
+            const $ = document.querySelector.bind(document);
+            !(function (a) {
+                "use strict";
+                "function" == typeof define && define.amd
+                    ? define(["jquery"], a)
+                    : a(jQuery);
+            })(function (a) {
+                "use strict";
+                function b(a) {
+                    if (a instanceof Date) return a;
+                    if (String(a).match(g))
+                        return (
+                            String(a).match(/^[0-9]*$/) && (a = Number(a)),
+                            String(a).match(/\-/) &&
+                                (a = String(a).replace(/\-/g, "/")),
+                            new Date(a)
+                        );
+                    throw new Error(
+                        "Couldn't cast `" + a + "` to a date object."
+                    );
+                }
+                function c(a) {
+                    var b = a
+                        .toString()
+                        .replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1");
+                    return new RegExp(b);
+                }
+                function d(a) {
+                    return function (b) {
+                        var d = b.match(/%(-|!)?[A-Z]{1}(:[^;]+;)?/gi);
+                        if (d)
+                            for (var f = 0, g = d.length; f < g; ++f) {
+                                var h = d[f].match(
+                                        /%(-|!)?([a-zA-Z]{1})(:[^;]+;)?/
+                                    ),
+                                    j = c(h[0]),
+                                    k = h[1] || "",
+                                    l = h[3] || "",
+                                    m = null;
+                                (h = h[2]),
+                                    i.hasOwnProperty(h) &&
+                                        ((m = i[h]), (m = Number(a[m]))),
+                                    null !== m &&
+                                        ("!" === k && (m = e(l, m)),
+                                        "" === k &&
+                                            m < 10 &&
+                                            (m = "0" + m.toString()),
+                                        (b = b.replace(j, m.toString())));
+                            }
+                        return (b = b.replace(/%%/, "%"));
+                    };
+                }
+                function e(a, b) {
+                    var c = "s",
+                        d = "";
+                    return (
+                        a &&
+                            ((a = a.replace(/(:|;|\s)/gi, "").split(/\,/)),
+                            1 === a.length
+                                ? (c = a[0])
+                                : ((d = a[0]), (c = a[1]))),
+                        Math.abs(b) > 1 ? c : d
+                    );
+                }
+                var f = [],
+                    g = [],
+                    h = {
+                        precision: 100,
+                        elapse: !1,
+                        defer: !1,
+                    };
+                g.push(/^[0-9]*$/.source),
+                    g.push(
+                        /([0-9]{1,2}\/){2}[0-9]{4}( [0-9]{1,2}(:[0-9]{2}){2})?/
+                            .source
+                    ),
+                    g.push(
+                        /[0-9]{4}([\/\-][0-9]{1,2}){2}( [0-9]{1,2}(:[0-9]{2}){2})?/
+                            .source
+                    ),
+                    (g = new RegExp(g.join("|")));
+                var i = {
+                        Y: "years",
+                        m: "months",
+                        n: "daysToMonth",
+                        d: "daysToWeek",
+                        w: "weeks",
+                        W: "weeksToMonth",
+                        H: "hours",
+                        M: "minutes",
+                        S: "seconds",
+                        D: "totalDays",
+                        I: "totalHours",
+                        N: "totalMinutes",
+                        T: "totalSeconds",
+                    },
+                    j = function (b, c, d) {
+                        (this.el = b),
+                            (this.$el = a(b)),
+                            (this.interval = null),
+                            (this.offset = {}),
+                            (this.options = a.extend({}, h)),
+                            (this.firstTick = !0),
+                            (this.instanceNumber = f.length),
+                            f.push(this),
+                            this.$el.data(
+                                "countdown-instance",
+                                this.instanceNumber
+                            ),
+                            d &&
+                                ("function" == typeof d
+                                    ? (this.$el.on("update.countdown", d),
+                                      this.$el.on("stoped.countdown", d),
+                                      this.$el.on("finish.countdown", d))
+                                    : (this.options = a.extend({}, h, d))),
+                            this.setFinalDate(c),
+                            this.options.defer === !1 && this.start();
+                    };
+                a.extend(j.prototype, {
+                    start: function () {
+                        null !== this.interval && clearInterval(this.interval);
+                        var a = this;
+                        this.update(),
+                            (this.interval = setInterval(function () {
+                                a.update.call(a);
+                            }, this.options.precision));
+                    },
+                    stop: function () {
+                        clearInterval(this.interval),
+                            (this.interval = null),
+                            this.dispatchEvent("stoped");
+                    },
+                    toggle: function () {
+                        this.interval ? this.stop() : this.start();
+                    },
+                    pause: function () {
+                        this.stop();
+                    },
+                    resume: function () {
+                        this.start();
+                    },
+                    remove: function () {
+                        this.stop.call(this),
+                            (f[this.instanceNumber] = null),
+                            delete this.$el.data().countdownInstance;
+                    },
+                    setFinalDate: function (a) {
+                        this.finalDate = b(a);
+                    },
+                    update: function () {
+                        if (0 === this.$el.closest("html").length)
+                            return void this.remove();
+                        var a,
+                            b = new Date();
+                        return (
+                            (a = this.finalDate.getTime() - b.getTime()),
+                            (a = Math.ceil(a / 1e3)),
+                            (a =
+                                !this.options.elapse && a < 0
+                                    ? 0
+                                    : Math.abs(a)),
+                            this.totalSecsLeft === a || this.firstTick
+                                ? void (this.firstTick = !1)
+                                : ((this.totalSecsLeft = a),
+                                  (this.elapsed = b >= this.finalDate),
+                                  (this.offset = {
+                                      seconds: this.totalSecsLeft % 60,
+                                      minutes:
+                                          Math.floor(this.totalSecsLeft / 60) %
+                                          60,
+                                      hours:
+                                          Math.floor(
+                                              this.totalSecsLeft / 60 / 60
+                                          ) % 24,
+                                      days:
+                                          Math.floor(
+                                              this.totalSecsLeft / 60 / 60 / 24
+                                          ) % 7,
+                                      daysToWeek:
+                                          Math.floor(
+                                              this.totalSecsLeft / 60 / 60 / 24
+                                          ) % 7,
+                                      daysToMonth: Math.floor(
+                                          (this.totalSecsLeft / 60 / 60 / 24) %
+                                              30.4368
+                                      ),
+                                      weeks: Math.floor(
+                                          this.totalSecsLeft / 60 / 60 / 24 / 7
+                                      ),
+                                      weeksToMonth:
+                                          Math.floor(
+                                              this.totalSecsLeft /
+                                                  60 /
+                                                  60 /
+                                                  24 /
+                                                  7
+                                          ) % 4,
+                                      months: Math.floor(
+                                          this.totalSecsLeft /
+                                              60 /
+                                              60 /
+                                              24 /
+                                              30.4368
+                                      ),
+                                      years: Math.abs(
+                                          this.finalDate.getFullYear() -
+                                              b.getFullYear()
+                                      ),
+                                      totalDays: Math.floor(
+                                          this.totalSecsLeft / 60 / 60 / 24
+                                      ),
+                                      totalHours: Math.floor(
+                                          this.totalSecsLeft / 60 / 60
+                                      ),
+                                      totalMinutes: Math.floor(
+                                          this.totalSecsLeft / 60
+                                      ),
+                                      totalSeconds: this.totalSecsLeft,
+                                  }),
+                                  void (this.options.elapse ||
+                                  0 !== this.totalSecsLeft
+                                      ? this.dispatchEvent("update")
+                                      : (this.stop(),
+                                        this.dispatchEvent("finish"))))
+                        );
+                    },
+                    dispatchEvent: function (b) {
+                        var c = a.Event(b + ".countdown");
+                        (c.finalDate = this.finalDate),
+                            (c.elapsed = this.elapsed),
+                            (c.offset = a.extend({}, this.offset)),
+                            (c.strftime = d(this.offset)),
+                            this.$el.trigger(c);
+                    },
+                }),
+                    (a.fn.countdown = function () {
+                        var b = Array.prototype.slice.call(arguments, 0);
+                        return this.each(function () {
+                            var c = a(this).data("countdown-instance");
+                            if (void 0 !== c) {
+                                var d = f[c],
+                                    e = b[0];
+                                j.prototype.hasOwnProperty(e)
+                                    ? d[e].apply(d, b.slice(1))
+                                    : null ===
+                                      String(e).match(/^[$A-Z_][0-9A-Z_$]*$/i)
+                                    ? (d.setFinalDate.call(d, e), d.start())
+                                    : a.error(
+                                          "Method %s does not exist on jQuery.countdown".replace(
+                                              /\%s/gi,
+                                              e
+                                          )
+                                      );
+                            } else new j(this, b[0], b[1]);
+                        });
+                    });
+            });
+
+            (function ($) {
+                $.fn.CountdownGampang = function (options, callback) {
+                    // check for jQuery knob and throttle
+                    if (!jQuery().knob) {
+                        throw "CountdownGampang require jQuery knob.";
+                    }
+
+                    if (!jQuery.throttle) {
+                        throw "CountdownGampang require jQuery throttle / debounce.";
+                    }
+
+                    var element = $(this);
+                    var settings = {
+                        rampung: undefined,
+                        labels: true,
+                        labelsOptions: {
+                            lang: {
+                                days: "Days",
+                                hours: "Hours",
+                                minutes: "Minutes",
+                                seconds: "Seconds",
+                            },
+                        },
+                        style: {
+                            element: "",
+                            labels: false,
+                            textResponsive: 0.5,
+                            days: {
+                                gauge: {
+                                    thickness: 0.02,
+                                    bgColor: "#ff8503",
+                                    fgColor: "#ff8503",
+                                    lineCap: "butt",
+                                },
+                                textCSS: "",
+                            },
+                            hours: {
+                                gauge: {
+                                    thickness: 0.02,
+                                    bgColor: "rgba(0, 0, 0, 0)",
+                                    fgColor: "rgba(0, 0, 0, 1)",
+                                    lineCap: "butt",
+                                },
+                                textCSS: "",
+                            },
+                            minutes: {
+                                gauge: {
+                                    thickness: 0.02,
+                                    bgColor: "rgba(0, 0, 0, 0)",
+                                    fgColor: "rgba(0, 0, 0, 1)",
+                                    lineCap: "butt",
+                                },
+                                textCSS: "",
+                            },
+                            seconds: {
+                                gauge: {
+                                    thickness: 0.02,
+                                    bgColor: "rgba(0, 0, 0, 0)",
+                                    fgColor: "rgba(0, 0, 0, 1)",
+                                    lineCap: "butt",
+                                },
+                                textCSS: "",
+                            },
+                        },
+                        onEndCallback: function () {
+                            if (window.console && window.console.log) {
+                                window.console.log(
+                                    "[CountdownGampang::isRampung] Wayae, wayae ......"
+                                );
+                            }
+                        },
+                    };
+
+                    // if not rampung passed in options
+                    if (!options.rampung) {
+                        throw "Parameter options.rampung must passed bro.";
+                    }
+
+                    // append options
+                    settings = $.extend(true, settings, options);
+
+                    // callback
+                    if (typeof callback !== undefined) {
+                        settings.onEndCallback = callback;
+                    }
+
+                    function prepareTemplate() {
+                        element.append(
+                            '<div class="ClassyCountdown-wrapper">' +
+                                '<div class="ClassyCountdown-days">' +
+                                '<input type="text" />' +
+                                '<div class="ClassyCountdown-value"><div></div><span></span></div>' +
+                                "</div>" +
+                                '<div class="ClassyCountdown-hours">' +
+                                '<input type="text" />' +
+                                '<div class="ClassyCountdown-value"><div></div><span></span></div>' +
+                                "</div>" +
+                                '<div class="ClassyCountdown-minutes">' +
+                                '<input type="text" />' +
+                                '<div class="ClassyCountdown-value"><div></div><span></span></div>' +
+                                "</div>" +
+                                '<div class="ClassyCountdown-seconds">' +
+                                '<input type="text" />' +
+                                '<div class="ClassyCountdown-value"><div></div><span></span></div>' +
+                                "</div>" +
+                                "</div>"
+                        );
+
+                        element.find(".ClassyCountdown-days input").knob(
+                            $.extend(
+                                {
+                                    width: "100%",
+                                    displayInput: false,
+                                    readOnly: true,
+                                    max: 365,
+                                },
+                                settings.style.days.gauge
+                            )
+                        );
+
+                        element.find(".ClassyCountdown-hours input").knob(
+                            $.extend(
+                                {
+                                    width: "100%",
+                                    displayInput: false,
+                                    readOnly: true,
+                                    max: 24,
+                                },
+                                settings.style.hours.gauge
+                            )
+                        );
+
+                        element.find(".ClassyCountdown-minutes input").knob(
+                            $.extend(
+                                {
+                                    width: "100%",
+                                    displayInput: false,
+                                    readOnly: true,
+                                    max: 60,
+                                },
+                                settings.style.minutes.gauge
+                            )
+                        );
+
+                        element.find(".ClassyCountdown-seconds input").knob(
+                            $.extend(
+                                {
+                                    width: "100%",
+                                    displayInput: false,
+                                    readOnly: true,
+                                    max: 60,
+                                },
+                                settings.style.seconds.gauge
+                            )
+                        );
+
+                        element
+                            .find(".ClassyCountdown-wrapper > div")
+                            .attr("style", settings.style.element);
+                        element
+                            .find(
+                                ".ClassyCountdown-days .ClassyCountdown-value"
+                            )
+                            .attr("style", settings.style.days.textCSS);
+                        element
+                            .find(
+                                ".ClassyCountdown-hours .ClassyCountdown-value"
+                            )
+                            .attr("style", settings.style.hours.textCSS);
+                        element
+                            .find(
+                                ".ClassyCountdown-minutes .ClassyCountdown-value"
+                            )
+                            .attr("style", settings.style.minutes.textCSS);
+                        element
+                            .find(
+                                ".ClassyCountdown-seconds .ClassyCountdown-value"
+                            )
+                            .attr("style", settings.style.seconds.textCSS);
+
+                        if (settings.labels) {
+                            element
+                                .find(
+                                    ".ClassyCountdown-days .ClassyCountdown-value > span"
+                                )
+                                .html(settings.labelsOptions.lang.days);
+                            element
+                                .find(
+                                    ".ClassyCountdown-hours .ClassyCountdown-value > span"
+                                )
+                                .html(settings.labelsOptions.lang.hours);
+                            element
+                                .find(
+                                    ".ClassyCountdown-minutes .ClassyCountdown-value > span"
+                                )
+                                .html(settings.labelsOptions.lang.minutes);
+                            element
+                                .find(
+                                    ".ClassyCountdown-seconds .ClassyCountdown-value > span"
+                                )
+                                .html(settings.labelsOptions.lang.seconds);
+                            element
+                                .find(".ClassyCountdown-value > span")
+                                .attr("style", settings.labelsOptions.style);
+                        }
+                    }
+
+                    function onResize() {
+                        element
+                            .find(".ClassyCountdown-wrapper > div")
+                            .each(function () {
+                                $(this).css("height", $(this).width() + "px");
+                            });
+
+                        if (settings.style.textResponsive) {
+                            element
+                                .find(".ClassyCountdown-value")
+                                .css(
+                                    "font-size",
+                                    Math.floor(
+                                        (element.find("> div").eq(0).width() *
+                                            settings.style.textResponsive) /
+                                            10
+                                    ) + "px"
+                                );
+                        }
+
+                        element
+                            .find(".ClassyCountdown-days input")
+                            .trigger("change");
+                        element
+                            .find(".ClassyCountdown-hours input")
+                            .trigger("change");
+                        element
+                            .find(".ClassyCountdown-minutes input")
+                            .trigger("change");
+                        element
+                            .find(".ClassyCountdown-seconds input")
+                            .trigger("change");
+                    }
+
+                    function doResponsive() {
+                        element
+                            .find(".ClassyCountdown-wrapper > div")
+                            .each(function () {
+                                $(this).css("height", $(this).width() + "px");
+                            });
+
+                        if (settings.style.textResponsive) {
+                            element
+                                .find(".ClassyCountdown-value")
+                                .css(
+                                    "font-size",
+                                    Math.floor(
+                                        (element.find("> div").eq(0).width() *
+                                            settings.style.textResponsive) /
+                                            10
+                                    ) + "px"
+                                );
+                        }
+
+                        $(window).trigger("resize");
+
+                        $(window).resize($.throttle(50, onResize));
+                    }
+
+                    function getTheme(name) {
+                        switch (name) {
+                            case "flat-colors-very-wide":
+                                return {
+                                    labels: true,
+                                    style: {
+                                        element: "",
+                                        textResponsive: 0.5,
+                                        days: {
+                                            gauge: {
+                                                thickness: 0.1,
+                                                width: 140,
+                                                height: 140,
+                                                bgColor: "#F3F3F3",
+                                                fgColor: "#00C4F4",
+                                            },
+                                            textCSS:
+                                                "font-weight:600;color:#030B15;",
+                                        },
+                                        hours: {
+                                            gauge: {
+                                                thickness: 0.1,
+                                                width: 140,
+                                                height: 140,
+                                                bgColor: "#F3F3F3",
+                                                fgColor: "#FF9700",
+                                            },
+                                            textCSS:
+                                                "font-weight:600;color:#030B15;",
+                                        },
+                                        minutes: {
+                                            gauge: {
+                                                thickness: 0.1,
+                                                width: 140,
+                                                height: 140,
+                                                bgColor: "#F3F3F3",
+                                                fgColor: "#FF4581",
+                                            },
+                                            textCSS:
+                                                "font-weight:600;color:#030B15;",
+                                        },
+                                        seconds: {
+                                            gauge: {
+                                                thickness: 0.1,
+                                                width: 140,
+                                                height: 140,
+                                                bgColor: "#F3F3F3",
+                                                fgColor: "#12D176",
+                                            },
+                                            textCSS:
+                                                "font-weight:600;color:#030B15;",
+                                        },
+                                    },
+                                };
+                        }
+                    }
+
+                    // append theme from options if passed
+                    if (options.theme) {
+                        if (options.theme === "default") {
+                            options.theme = "flat-colors-very-wide";
+                        }
+                        settings = $.extend(
+                            true,
+                            settings,
+                            getTheme(options.theme)
+                        );
+                    } else {
+                        settings = $.extend(
+                            true,
+                            settings,
+                            getTheme("flat-colors-very-wide")
+                        );
+                    }
+
+                    prepareTemplate();
+
+                    var countdown = setInterval(function () {
+                        var siki = new Date().getTime();
+                        var sels = settings.rampung - siki;
+
+                        var days = Math.floor(sels / (1000 * 60 * 60 * 24));
+                        var hours = Math.floor(
+                            (sels % (1000 * 60 * 60 * 18)) / (1000 * 60 * 60)
+                        );
+                        var minutes = Math.floor(
+                            (sels % (1000 * 60 * 40)) / (1000 * 60)
+                        );
+                        var seconds = Math.floor((sels % (1000 * 60)) / 1000);
+
+                        if (sels < 0) {
+                            days = 0;
+                            hours = 0;
+                            minutes = 0;
+                            seconds = 0;
+                        }
+
+                        element
+                            .find(".ClassyCountdown-days input")
+                            .val(365 - days)
+                            .trigger("change");
+                        element
+                            .find(".ClassyCountdown-hours input")
+                            .val(24 - hours)
+                            .trigger("change");
+                        element
+                            .find(".ClassyCountdown-minutes input")
+                            .val(60 - minutes)
+                            .trigger("change");
+                        element
+                            .find(".ClassyCountdown-seconds input")
+                            .val(60 - seconds)
+                            .trigger("change");
+                        element
+                            .find(
+                                ".ClassyCountdown-days .ClassyCountdown-value > div"
+                            )
+                            .html(days);
+                        element
+                            .find(
+                                ".ClassyCountdown-hours .ClassyCountdown-value > div"
+                            )
+                            .html(hours);
+                        element
+                            .find(
+                                ".ClassyCountdown-minutes .ClassyCountdown-value > div"
+                            )
+                            .html(minutes);
+                        element
+                            .find(
+                                ".ClassyCountdown-seconds .ClassyCountdown-value > div"
+                            )
+                            .html(seconds);
+
+                        if (sels < 0) {
+                            clearInterval(countdown);
+                            settings.onEndCallback();
+                        }
+                    }, 1000);
+                    doResponsive();
+                };
+            })(jQuery);
+
+            $("[data-countdown]").forEach(function () {
+                var $this = $(this),
+                    finalDate = $(this).data("countdown");
+                $this.countdown(finalDate, function (event) {
+                    $this.html(
+                        event.strftime(
+                            '<div class="time-count day"><span>%D</span>Days</div><div class="time-count hour"><span>%H</span>hour</div><div class="time-count min"><span>%M</span>minute</div><div class="time-count sec"><span>%S</span>second</div>'
+                        )
+                    );
+                });
+            });
+            var element = $("#countdown-gampang");
+            var finish_d = new Date();
+            finish_d.setDate(finish_d.getDate() + 50);
+            element.CountdownGampang({
+                rampung: finish_d,
+            });
+        </script>
+    </body>
+</html>

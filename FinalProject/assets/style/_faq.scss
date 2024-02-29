@@ -20,12 +20,13 @@
         .faq-item {
             cursor: pointer;
             margin-bottom: 24px;
+            position: relative;
             .question {
                 justify-content: space-between;
                 align-items: center;
                 background-color: #ffffff;
                 border-radius: 100px;
-                transition: all 0.3 ease-in-out;
+                transition: all 0.2s ease-in-out;
                 h3 {
                     color: #212529;
 
@@ -45,42 +46,42 @@
                     opacity: 0.3;
                     transition: all 0.2s ease-in-out;
                 }
-                .arrow-active {
-                    transform: rotate(-90deg);
-                }
             }
             .answer {
-                display: none;
+                position: relative;
+
                 background-color: #ffffff;
-                line-height: 28px;
-                padding: 0px 40px 45px 55px;
-                color: #727885;
-                font-family: Outfit;
-                font-size: 18px;
-                grid-area: auto;
-                border-bottom: 4px solid #00c4f4;
                 overflow: hidden;
+                transition: height 0.2s ease-in-out;
+                height: 0;
+
+                .inner {
+                    padding: 0px 40px 45px 55px;
+                    position: absolute;
+                    line-height: 28px;
+                    color: #727885;
+                    font-family: Outfit;
+                    font-size: 18px;
+                    border-bottom: 4px solid #00c4f4;
+                }
             }
-            .answer-active {
-                animation: fadeDown 0.3s ease-in-out;
-                display: block;
-                animation-fill-mode: forwards;
-            }
-            // .answer-disabled {
-            //     display: block;
-            //     animation: fadeUp 0.3 ease-in-out;
-            //     animation-fill-mode: forwards;
-            // }
         }
-        .faq-item-active {
-            animation: fadeBorder 0.3s ease-in-out;
+        .faq-item.active {
+            .question {
+                border-radius: 0;
+            }
+
+            i {
+                transform: rotate(-90deg);
+            }
         }
     }
     .img2 {
         position: absolute;
-
-        top: 172px;
-        right: 152px;
+        width: 80px;
+        height: auto;
+        top: 100px;
+        right: 100px;
         animation: rolate360 10s linear infinite;
     }
     .img1 {
@@ -90,9 +91,7 @@
         animation: di_chuyen_ngang 5s linear infinite;
     }
 }
-.faq-item-active {
-    border-radius: 0px !important;
-}
+
 @media screen and (min-width: 740px) and (max-width: 1239px) {
     #faq {
         .faq-content {
@@ -153,21 +152,24 @@
                 }
                 .answer {
                     background-color: #ffffff;
-                    line-height: 28px;
-                    padding: 0 25px 40px 25px;
-                    color: #727885;
-                    font-family: Outfit;
-                    font-size: 18px;
-                    grid-area: auto;
-                    border-bottom: 4px solid #00c4f4;
+
+                    .inner {
+                        padding: 0 25px 40px 25px;
+                        line-height: 28px;
+
+                        color: #727885;
+                        font-family: Outfit;
+                        font-size: 18px;
+                        grid-area: auto;
+                        border-bottom: 4px solid #00c4f4;
+                    }
                 }
             }
         }
         .img2 {
             position: absolute;
             display: none;
-            top: 172px;
-            right: 152px;
+
             animation-name: rolate360;
             animation-duration: infinite;
             animation-timing-function: linear;
