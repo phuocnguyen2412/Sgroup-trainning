@@ -16,14 +16,14 @@ $$(".nav-body-item").forEach((block) => {
 ///----------------------------------------------------------------
 $$(".faq-item").forEach((block) => {
     block.addEventListener("click", (e) => {
-        $$(".faq-item").forEach((block) => {
-            block.classList.remove("active");
-            const isActive = block.classList.contains("active");
-            const answer = block.querySelector(".answer");
-            answer.style.height = `${
-                isActive ? answer.querySelector(".inner").clientHeight + 4 : 0
-            }px`;
+        $$(".faq-item").forEach((activeBlock) => {
+            if (activeBlock !== block) {
+                activeBlock.classList.remove("active");
+                const answer = activeBlock.querySelector(".answer");
+                answer.style.height = "0";
+            }
         });
+
         block.classList.toggle("active");
         const isActive = block.classList.contains("active");
         const answer = block.querySelector(".answer");
@@ -32,6 +32,7 @@ $$(".faq-item").forEach((block) => {
         }px`;
     });
 });
+
 
 ///////// countdown //////////////////////////////////
 function setProcessClock(clock, currentValue, color) {
