@@ -1,9 +1,19 @@
 const $$ = document.querySelectorAll.bind(document);
 const $ = document.querySelector.bind(document);
-setTimeout(() => {
-    $("#preloader").style.display = "none";
-}, 2000);
+// setTimeout(() => {
+//     $("#preloader").style.display = "none";
+// }, 2000);
+//// TAble-mobile-nav////
+$$(".nav-body-item").forEach((block) => {
+    block.addEventListener("click", (e) => {
+        block.classList.toggle("active");
+        const isActive = block.classList.contains("active");
+        const subMenu = block.querySelector(".nav-sub-menu");
 
+        subMenu.style.height = `${isActive ? 90 : 0}px`;
+    });
+});
+///----------------------------------------------------------------
 $$(".faq-item").forEach((block) => {
     block.addEventListener("click", (e) => {
         $$(".faq-item").forEach((block) => {

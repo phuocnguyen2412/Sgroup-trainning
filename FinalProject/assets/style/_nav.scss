@@ -43,10 +43,13 @@
         }
         .nav-body {
             .nav-body-item {
+                position: relative;
+                overflow: hidden;
                 .row {
                     position: relative;
 
                     span {
+                        transition: all 0.5s ease-in-out;
                         position: absolute;
                         display: inline-block;
                         right: 15px;
@@ -64,6 +67,8 @@
                     }
                 }
                 .nav-sub-menu {
+                    transition: all 0.5s ease-in-out;
+                    height: 0;
                     a {
                         padding: 10px 60px 10px 45px;
                     }
@@ -82,7 +87,14 @@
                     font-size: 14px;
                     font-weight: 600;
                     color: white;
+                    transition: all 0.5s ease-in-out;
                 }
+                a:hover {
+                    color: #00c4f4;
+                }
+            }
+            .nav-body-item.active span {
+                transform: rotate(-180deg);
             }
         }
         .nav-footer {
@@ -110,6 +122,22 @@
     display: block;
     animation: fadeRightToLeft 0.25s ease-in-out;
     animation-fill-mode: forwards;
+}
+.tablet-moblie-nav-disabled {
+    display: block;
+    animation: navToRight 0.5s ease-in-out;
+    animation-fill-mode: forwards;
+}
+@keyframes navToRight {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        right: translateX(-1000px);
+        z-index: -1000;
+    }
 }
 header {
     .nav-sticky {
