@@ -33,6 +33,7 @@ $$(".faq-item").forEach((block) => {
     });
 });
 
+
 ///////// countdown //////////////////////////////////
 function setProcessClock(clock, currentValue, color) {
     const circle = clock.querySelector(".outer");
