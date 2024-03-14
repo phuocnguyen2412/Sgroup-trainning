@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+                height: 100%;
+            }
+            .login {
+                display: flex;
+                height: 100vh;
+            }
+            .backdrop {
+                color: #fff;
+                background-color: #144ec1;
+                width: 40%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .login-form {
+                width: 60%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            h2 {
+                text-transform: uppercase;
+                font-size: 30px;
+            }
+            span {
+                display: block;
+                margin: 1rem 0;
+            }
+            a {
+                color: #144ec1;
+            }
+            label {
+                color: #144ec1;
+            }
+            input {
+                padding: 0.5rem 0.5rem;
+                margin: 1rem 0;
+                width: 100%;
+                outline: none;
+                border-radius: 6px;
+                border: 1px solid #ccc;
+                font-size: 20px;
+            }
+            button {
+                border-radius: 6px;
+                color: #fff;
+                font-size: 20px;
+                padding: 12px 0;
+                background-color: #144ec1;
+                margin: 1rem 0;
+                width: 100%;
+                border: none;
+            }
+            form {
+                width: 50%;
+                display: block;
+            }
+            .checkbox_confirm {
+                display: inline;
+                width: 10%;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div class="login">
+                <div class="backdrop">
+                    <h2>VUESTIC</h2>
+                </div>
+                <div class="login-form">
+                    <form id="login-form">
+                        <h2>Log in</h2>
+                        <span
+                            >New to Vuestic?
+                            <a href="./Signup.html">Sign up</a></span
+                        >
+                        <label for="">EMAIL</label>
+                        <input type="text" id="username" />
+                        <span class="username-notify"></span>
+                        <label for="">PASSWORD</label>
+                        <input type="password" id="password" />
+                        <span class="password-notify"> </span>
+                        <input type="checkbox" class="checkbox_confirm" />
+                        <label for="">Keep me signed in on this device</label>
+
+                        <button type="submit">Log in</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <script src="./Login.js"></script>
+    </body>
+</html>
