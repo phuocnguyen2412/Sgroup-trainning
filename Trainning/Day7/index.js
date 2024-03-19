@@ -60,6 +60,7 @@ function updateData() {
     )
         .then((response) => {
             if (!response.ok) throw new Error("Failed to update data");
+            alert("Updated data");
             console.log("Data updated successfully");
             getData();
         })
@@ -87,6 +88,7 @@ function postData() {
     })
         .then((response) => {
             if (!response.ok) throw new Error("Failed to post data");
+            alert("Post thanh cong!");
             console.log("Data posted successfully");
             getData();
         })
@@ -105,6 +107,7 @@ function deleteData(id) {
             if (!response.ok) throw new Error("Failed to delete data");
             console.log("Data deleted successfully");
             getData();
+            alert("Delete data successfully");
         })
         .catch((error) => {
             console.error(error);
@@ -123,6 +126,11 @@ function handleFindUserById() {
             $$(".fa-trash").forEach((item) =>
                 item.addEventListener("click", () =>
                     deleteData(item.getAttribute("value"))
+                )
+            );
+            $$(".btn_openModel_edit").forEach((item) =>
+                item.addEventListener("click", () =>
+                    openModel(item.getAttribute("value"))
                 )
             );
         })
